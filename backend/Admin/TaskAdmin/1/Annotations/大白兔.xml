@@ -1,0 +1,12 @@
+<annotion>
+  <folder>VOCtype</folder>
+  <filename>&#22823;&#30333;&#20820;.jpg</filename>
+  <source>
+    <database>VOC</database>
+  </source>
+  <size>
+    <width>198</width>
+    <height>172</height>
+  </size>
+  <segmented>0</segmented>
+</annotion>
