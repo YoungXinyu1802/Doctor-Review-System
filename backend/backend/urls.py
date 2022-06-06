@@ -3,8 +3,7 @@ from . import views
 from django.views.generic.base import TemplateView  # try integrate react into django
 
 urlpatterns = [
-    # re_path(r'test$', views.find_doc_detail),
-    # re_path(r'department/$', views.get_department),
+    # re_path(r'test/$', views.find_doc_detail),
     # re_path(r'signup$', views.signup),
     # re_path(r'label$', views.label),
     # re_path(r'upload$', views.upload),

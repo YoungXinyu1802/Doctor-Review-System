@@ -38,12 +38,11 @@ urlpatterns = [
     re_path(r'^admin/', admin.site.urls),
     re_path(r'^$', include(backend.urls)),
     re_path(r'^$', TemplateView.as_view(template_name="index.html")),
-    re_path(r'test/$', backend.views.find_doc_detail),
     re_path(r'department/$', backend.views.get_department),
     re_path(r'searchdoctor/$', backend.views.find_doc),
-    re_path(r'initDoctor/$', backend.views.find_doc_detail),
+    re_path(r'initDoctor/$', backend.views.return_doc),
     re_path(r'initComment/$', backend.views.return_comment_list),
-    re_path(r'updatelike/$', backend.views.create_approval)
-
+    re_path(r'updatelike/$', backend.views.create_approval),
+    re_path(r'addComments/$', backend.views.create_comment)
 ]
 
