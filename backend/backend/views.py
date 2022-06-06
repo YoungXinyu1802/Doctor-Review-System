@@ -13,6 +13,8 @@ from django.db.models import Q
 
 # from models import User
 # from models import Goods
+from .models import User, Comment
+
 MEDIA_ROOT = os.path.join(Path(__file__).resolve().parent.parent.parent, 'backend/Admin')
 
 
@@ -30,12 +32,11 @@ def get_doc_info(doc_set, doc_list):
     for d in doc_set:
         doc_list.append({
             "id": d.id,
-            "doctor_name": d.doctor_name,
+            "name": d.doctor_name,
             "score": d.score,
-            "position": d.position,
-            "description": d.description,
-            "department": d.department,
-            "photo": d.photo
+            "title": d.position,
+            "detail": d.description,
+            "post": d.department.department_name
         })
     print(doc_list)
     if len(doc_list):
@@ -56,14 +57,27 @@ def get_hot_doc(request):
 # 返回部门信息
 @csrf_exempt
 def get_department(request):
-    dep = request.POST.get("department")
+    print("get_department")
+    dep = request.POST.get("name")
     dep_set = models.Department.objects.filter(department_name=dep)
     doc_set = models.DoctorInfo.objects.filter(department=dep).order_by("score")
-    doc_list = [{
-        "department_name": dep[0].department_name,
-        "description": dep[0].description
-    }]
-    return get_doc_info(doc_set, doc_list)
+    dep_list = [dep]
+    doc_list = []
+    for d in doc_set:
+        doc_list.append({
+            "id": d.id,
+            "doctorName": d.doctor_name,
+            "position": d.position,
+            "doctorDescription": d.description,
+            "image": d.photo
+        })
+    for d in dep_set:
+        dep_list.append({
+            "name": d.department_name,
+            "description": [d.description],
+            "doctor": doc_list
+        })
+    return ok(dep_list)
 
 
 # 从部门找到医生列表
@@ -78,29 +92,19 @@ def find_doc_from_department(request):
 # 找到医生主页
 @csrf_exempt
 def find_doc_detail(request):
+    # doc_id = 1
     doc_id = request.POST.get("id")
     doc_set = models.DoctorInfo.objects.filter(id=doc_id)
     doc_list = []
     for d in doc_set:
         doc_list = [{
-            "doctor_name": d.doctor_name,
+            "name": d.doctor_name,
             "score": d.score,
-            "position": d.position,
-            "description": d.description,
-            "department": d.department,
+            "jobLevel": d.position,
+            "brief": d.description,
+            "department": d.department.department_name,
             "photo": d.photo
         }]
-    comment_data = models.Comment.objects.filter(doc=doc_id).order_by("approval")
-    index = 1
-    for c in comment_data:
-        doc_list.append({
-            "id": index,
-            "user": c.user,
-            "score": c.score,
-            "content": c.content,
-            "approval": c.approval
-        })
-        index += 1
     return ok(doc_list)
 
 
@@ -125,20 +129,23 @@ def check_is_commented(user, doc):
 
 # 获取医生评价信息
 @csrf_exempt
-def return_comment_list(doc):
-    comment_data = models.Comment.objects.filter(doc=doc).order_by("approval")
+def return_comment_list(request):
+    doc_id = request.POST.get("id")
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
     comment_list = []
-    index = 1
-    for c in comment_data:
-        comment_list.append({
-            "id": index,
-            "user": c.user,
-            "score": c.score,
-            "content": c.content,
-            "approval": c.approval
-        })
-        index += 1
-    print(comment_list)
+    if doc_set.exists():
+        comment_data = models.Comment.objects.filter(doc=doc_set[0]).order_by("likes")
+        for c in comment_data:
+            comment_list.append({
+                "commentId": c.id,
+                "user": c.user,
+                "score": c.score,
+                "content": c.content,
+                "dislikes": c.dislikes,
+                "likes": c.likes,
+                "author": c.user.user_name,
+                "likeState": check_approval(c.user, c),
+            })
     return ok(comment_list)
 
 
@@ -154,11 +161,12 @@ def update_score(doc, score):
 # 添加评价
 @csrf_exempt
 def create_comment(request):
-    _user = request.POST.get("user")
+    # _user = request.POST.get("user")
+    _user = 1
     _doc = request.POST.get("doc")
     _score = request.POST.get("score")
     _content = request.POST.get("content")
-    if check_is_commented(_user, _doc) == 1:
+    if check_is_commented(_user, _doc) != 0:
         new_comment = models.Comment(user=_user, doc=_doc, score=_score, content=_content)
         new_comment.save()
         update_score(_user, _score)
@@ -167,24 +175,42 @@ def create_comment(request):
         return err("用户已经评价过了")
 
 
+# 判断是否已经赞踩
+@csrf_exempt
+def check_approval(user, comment):
+    approval_set = models.Approval.objects.filter(user=user, comment=comment)
+    if approval_set.exists():
+        for a in approval_set:
+            if a.approval:
+                return 1
+            else:
+                return 2
+    else:
+        return 0
+
 # 添加赞踩
 @csrf_exempt
 def create_approval(request):
-    _user = request.POST.get("user")
+    # _user = request.POST.get("user")
+    _user = "123456789@gmail.com"
     _comment = request.POST.get("comment")
-    _approval = request.POST.get("approval")
-    approval_set = models.Approval.objects.filter(user=_user, comment=_comment, approval=_approval)
+    _approval = request.POST.get("likestate")
+    approval_set = models.Approval.objects.filter(user=User.objects.get(email=_user), comment=Comment.objects.get(id=_comment))
     if approval_set.exists():
-        if _approval:
+        if _approval == 1:
             return err("用户不可以重复点赞")
-        else:
+        elif _approval == 2:
             return err("用户不可以重复点踩")
-    new_approval = models.Approval(user=_user, comment=_comment, approval=_approval)
+        else:
+            new_approval = approval_set[0]
+            new_approval.approval = _approval
+    else:
+        new_approval = models.Approval(user=User.objects.get(email=_user), comment=Comment.objects.get(id=_comment), approval=_approval)
     comment = models.Comment.objects.filter(id=_comment)
     new_approval.save()
     for c in comment:
         if _approval:
-            c.approval = c.approval + 1
+            c.likes = c.likes + 1
         else:
-            c.approval = c.approval - 1
+            c.dislikes = c.dislikes - 1
     return return_comment_list(c.doc)

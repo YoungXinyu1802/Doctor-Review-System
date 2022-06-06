@@ -9,6 +9,12 @@ MEDIA_ROOT = os.path.join(Path(__file__).resolve().parent.parent.parent, 'backen
 # Create your models here.
 
 
+def getURL(instance, filename):
+    imgName = instance.publish_user.user_name
+    print(imgName)
+    return MEDIA_ROOT + '/UserAdmin/%s/database/%s' % (imgName, filename)
+
+
 class UserInfo(models.Model):
     user_name = models.CharField(primary_key=True, max_length=64)
     password = models.CharField(max_length=64, default='123456')
@@ -21,27 +27,6 @@ class UserInfo(models.Model):
 
     def __str__(self):
         return self.user_name
-
-
-def getURL(instance, filename):
-    imgName = instance.publish_user.user_name
-    print(imgName)
-    return MEDIA_ROOT + '/UserAdmin/%s/database/%s' % (imgName, filename)
-
-
-class LabelImg(models.Model):
-    publish_user = models.ForeignKey(UserInfo, null=True, on_delete=models.CASCADE, related_name='user_img')
-    status = models.CharField(max_length=20, default="未标注")
-    img = models.ImageField(upload_to=getURL, max_length=1000)
-
-
-class Task(models.Model):
-    publish_user = models.ForeignKey(UserInfo, null=True, on_delete=models.CASCADE, related_name='publish_task')
-    task_name = models.CharField(max_length=20, default="NULL")
-    description = models.TextField(max_length=1000, default="NULL")
-    claim_user = models.ForeignKey(UserInfo, null=True, on_delete=models.CASCADE, related_name='claim_task')
-    status = models.CharField(max_length=20, default="未领取")
-    img = models.ForeignKey(LabelImg, null=True, on_delete=models.CASCADE, related_name='task_img')
 
 
 class Department(models.Model):
@@ -74,21 +59,29 @@ class Doc_Dep(models.Model):
         return self.doc
 
 
+class User(models.Model):
+    user_name = models.CharField(max_length=64)
+
+    def __str__(self):
+        return self.user_name
+
+
 class Comment(models.Model):
     score = models.IntegerField(default=0)
     content = models.TextField(max_length=1000, default="NULL")
-    approval = models.IntegerField(default=0)
+    likes = models.IntegerField(default=0)
+    dislikes = models.IntegerField(default=0)
     doc = models.ForeignKey(DoctorInfo, null=True, on_delete=models.CASCADE, related_name='given_comment')
-    user = models.ForeignKey(UserInfo, null=True, on_delete=models.CASCADE, related_name='given_comment')
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name='given_comment')
 
     def __str__(self):
         return self.score
 
 
 class Approval(models.Model):
-    user = models.ForeignKey(UserInfo, null=True, on_delete=models.CASCADE, related_name='given_approval')
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name='given_approval')
     comment = models.ForeignKey(Comment, null=True, on_delete=models.CASCADE, related_name='given_approval')
-    approval = models.BooleanField(default=True)
+    approval = models.IntegerField(default=0)
 
     def __str__(self):
         return self.user

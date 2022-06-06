@@ -74,7 +74,7 @@ ROOT_URLCONF = 'ImageAnnotation.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'frontend/build']
+        'DIRS': [BASE_DIR / 'Evaluation_Front/build']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -83,13 +83,14 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # 'backend.views.global_settings'
             ],
         },
     },
 ]
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend', 'build/static')
+    os.path.join(BASE_DIR, 'Evaluation_Front', 'build/static')
 ]
 
 
