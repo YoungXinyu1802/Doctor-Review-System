@@ -188,14 +188,15 @@ def check_approval(user, comment):
     else:
         return 0
 
+
 # 添加赞踩
 @csrf_exempt
 def create_approval(request):
     # _user = request.POST.get("user")
-    _user = "123456789@gmail.com"
+    _user = 1
     _comment = request.POST.get("comment")
     _approval = request.POST.get("likestate")
-    approval_set = models.Approval.objects.filter(user=User.objects.get(email=_user), comment=Comment.objects.get(id=_comment))
+    approval_set = models.Approval.objects.filter(user=User.objects.get(id=_user), comment=Comment.objects.get(id=_comment))
     if approval_set.exists():
         if _approval == 1:
             return err("用户不可以重复点赞")
@@ -205,12 +206,12 @@ def create_approval(request):
             new_approval = approval_set[0]
             new_approval.approval = _approval
     else:
-        new_approval = models.Approval(user=User.objects.get(email=_user), comment=Comment.objects.get(id=_comment), approval=_approval)
+        new_approval = models.Approval(user=User.objects.get(id=_user), comment=Comment.objects.get(id=_comment), approval=_approval)
     comment = models.Comment.objects.filter(id=_comment)
     new_approval.save()
     for c in comment:
         if _approval:
             c.likes = c.likes + 1
         else:
-            c.dislikes = c.dislikes - 1
+            c.dislikes = c.dislikes + 1
     return return_comment_list(c.doc)

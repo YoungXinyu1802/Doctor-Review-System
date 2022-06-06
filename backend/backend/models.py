@@ -15,22 +15,9 @@ def getURL(instance, filename):
     return MEDIA_ROOT + '/UserAdmin/%s/database/%s' % (imgName, filename)
 
 
-class UserInfo(models.Model):
-    user_name = models.CharField(primary_key=True, max_length=64)
-    password = models.CharField(max_length=64, default='123456')
-    email = models.EmailField(default='123456789@gmail.com', unique=True)
-
-    class Meta:
-        constraints = [
-            models.UniqueConstraint(fields=['user_name', 'email'], name='unique_user') #用来保证用户唯一性
-        ]
-
-    def __str__(self):
-        return self.user_name
-
-
 class Department(models.Model):
-    department_name = models.CharField(primary_key=True, max_length=64)
+    id = models.AutoField(primary_key=True)
+    department_name = models.CharField(max_length=64)
     description = models.TextField(max_length=1000, default="NULL")
 
     def __str__(self):
@@ -38,6 +25,7 @@ class Department(models.Model):
 
 
 class DoctorInfo(models.Model):
+    id = models.AutoField(primary_key=True)
     doctor_name = models.CharField(max_length=64)
     position = models.CharField(max_length=64)
     score = models.FloatField(default=0)
@@ -51,15 +39,8 @@ class DoctorInfo(models.Model):
         return self.doctor_name
 
 
-class Doc_Dep(models.Model):
-    doc = models.ForeignKey(DoctorInfo,  null=True, on_delete=models.CASCADE, related_name='related_dep')
-    dep = models.ForeignKey(Department,  null=True, on_delete=models.CASCADE, related_name='related_doc')
-
-    def __str__(self):
-        return self.doc
-
-
 class User(models.Model):
+    id = models.AutoField(primary_key=True)
     user_name = models.CharField(max_length=64)
 
     def __str__(self):
@@ -67,6 +48,7 @@ class User(models.Model):
 
 
 class Comment(models.Model):
+    id = models.AutoField(primary_key=True)
     score = models.IntegerField(default=0)
     content = models.TextField(max_length=1000, default="NULL")
     likes = models.IntegerField(default=0)
@@ -79,6 +61,7 @@ class Comment(models.Model):
 
 
 class Approval(models.Model):
+    id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, null=True, on_delete=models.CASCADE, related_name='given_approval')
     comment = models.ForeignKey(Comment, null=True, on_delete=models.CASCADE, related_name='given_approval')
     approval = models.IntegerField(default=0)
