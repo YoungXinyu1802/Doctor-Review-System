@@ -1,4 +1,5 @@
 import shutil
+import json
 
 from django.views.decorators.csrf import csrf_exempt
 from .import models
@@ -29,6 +30,7 @@ def err(data: object):
 # 获取医生信息
 @csrf_exempt
 def get_doc_info(doc_set, doc_list):
+    doc_list = []
     for d in doc_set:
         doc_list.append({
             "id": d.id,
@@ -39,7 +41,7 @@ def get_doc_info(doc_set, doc_list):
             "post": d.department.department_name
         })
     if len(doc_list):
-        return ok(doc_list)
+        return doc_list
     else:
         return err("找不到符合条件的医生")
 
@@ -56,14 +58,40 @@ def get_hot_doc(request):
 # 返回部门信息
 @csrf_exempt
 def get_department(request):
-    dep = request.POST.get("department")
+    print(request.POST)
+    # get_json = request.POST.keys()[0]
+    # print(get_json)
+    # get_json = json.loads(get_json)
+    # print(get_json)
+    dep = request.POST.get("name")
+    print(dep)
     dep_set = models.Department.objects.filter(department_name=dep)
     doc_set = models.DoctorInfo.objects.filter(department=dep).order_by("score")
-    doc_list = [{
-        "department_name": dep[0].department_name,
-        "description": dep[0].description
-    }]
-    return get_doc_info(doc_set, doc_list)
+    desp = dep_set[0].description
+    desp_list = desp.split('\n')
+    print(len(desp_list))
+    print(desp_list)
+    dep_info = {
+        # "department_name": dep_set[0].department_name,
+        "description": desp_list
+    }
+    doc_list = []
+    for d in doc_set:
+        doc_list.append({
+            # "id": d.id,
+            "doctorName": d.doctor_name,
+            "position": d.position,
+            "doctorDescription": d.description
+            # "score": d.score,
+
+            # "post": d.department.department_name
+        })
+
+    print(dep_info)
+    print(doc_list)
+    return JsonResponse({'code': 0, 'message': '操作成功', 'department': dep_info, 'doctor_info': doc_list})
+    # return get_doc_info(doc_set, doc_list)
+    # return ok('department_name')
 
 
 # 从部门找到医生列表
@@ -100,6 +128,7 @@ def return_doc(request):
 # 检索医生
 @csrf_exempt
 def find_doc(request):
+
     doc_name = request.POST.get("doctor_name")
     doc_set = models.DoctorInfo.objects.filter(doctor_name=doc_name).order_by("score")
     doc_list = []

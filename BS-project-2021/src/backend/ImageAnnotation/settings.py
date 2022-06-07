@@ -144,7 +144,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql', # 数据库的类型
         'NAME': 'forum', #所使用的数据库的名字
         'USER': 'root', #数据库服务器的用户
-        'PASSWORD': 'Zsk8332571219', #密码
+        'PASSWORD': '123456', #密码
         'HOST': '127.0.0.1', #主机
         'PORT': '3306', #端口
     }
