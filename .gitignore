@@ -2,6 +2,8 @@
 backend/.idea
 .gitignore
 Evaluation_Front/.idea
+Evaluation_Front/build
+Evaluation_Front/node_modules
 */__pycache__/*
 backend/backend/__pycache__/*
 backend/backend/migrations/__pycache__/*
