@@ -61,8 +61,9 @@ python manage.py migrate
 ```shell
 python manage.py runserver
 ```
+前后端已经完成统一部署。
 
-已经把前端用`npm run build`进行打包，和后端部署在了一起，直接访问即可（如按照上面的地址和端口设置，直接按照运行结果提示访问127.0.0.1:8080）即可。
+如果把前端用`npm run build`进行打包，直接访问即可（如按照上面的地址和端口设置，直接按照运行结果提示访问127.0.0.1:8080）即可。
 
 如果想要前后端分离运行，前端`npm install`安装相关依赖后，`npm start`启动，并开启后端`python manage.py runserver`，也可正常运行。
 
