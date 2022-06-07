@@ -1,0 +1,27 @@
+.site-page-header {
+    border: 1px solid #007bff;
+
+}
+.first_layer{
+    margin-top: 20px;
+}
+.Comments{
+    width: calc(66%);
+    margin-left: 17%;
+}
+.interval{
+    height: 20px;
+}
+.TextArea{
+    width: calc(66%);
+    margin-left: 17%;
+}
+.Name{
+    margin-left: 62px;
+}
+.text1{
+    font-family: 黑体;
+}
+.Text{
+    font-family: 黑体;
+}

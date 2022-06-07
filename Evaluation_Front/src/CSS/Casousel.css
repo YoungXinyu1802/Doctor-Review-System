@@ -1,0 +1,15 @@
+
+.card-wrap{
+}
+.slick-slide {
+    text-align: center;
+    height: 160px;
+    line-height: 160px;
+    background: #f0f2f5;
+}
+
+.testCard{
+    height: 200px;
+    background-color: #f0f2f5;
+}
+

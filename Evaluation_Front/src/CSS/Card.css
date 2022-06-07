@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.container:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.container {
+    padding-left: 10px;
+}
+.container > div {
+    float: left;
+    height: 300px;
+    width: calc(20% - 20px);
+    margin: 10px 10px 10px 10px;
+    background: rgba(255, 255, 255, 0.69);
+}
+
+
+.card1{
+    text-align: center;
+}
+.image{
+    width: 1.2rem;
+    height: 1.2rem;
+    border: solid 0.05rem #34b3de;
+    border-radius: 50%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: 50%;
+    background-color: #ddd;
+}
+
+.text1{
+    font-size: 15px;
+    color: #595959;
+    font-family: '黑体';
+}
+
+
+
+
+
+
