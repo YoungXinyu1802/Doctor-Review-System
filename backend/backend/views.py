@@ -30,6 +30,7 @@ def err(data: object):
 # 获取医生信息
 @csrf_exempt
 def get_doc_info(doc_set, doc_list):
+    doc_list = []
     for d in doc_set:
         doc_list.append({
             "id": d.id,
@@ -40,7 +41,7 @@ def get_doc_info(doc_set, doc_list):
             "post": d.department.department_name
         })
     if len(doc_list):
-        return ok(doc_list)
+        return doc_list
     else:
         return err("找不到符合条件的医生")
 
