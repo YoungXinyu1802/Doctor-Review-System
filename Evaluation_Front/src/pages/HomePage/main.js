@@ -96,7 +96,7 @@ class HomePage extends Component {
         console.log("get in")
         var that=this
         var formData=new FormData();
-        var url="http://localhost:8080/searchdoctor/"
+        var url="http://124.220.171.17:8800/searchdoctor/"
         formData.append('doctor_name',e);
         fetch(url, {
             method : 'POST',

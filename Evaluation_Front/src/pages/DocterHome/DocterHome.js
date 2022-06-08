@@ -165,7 +165,7 @@ class DoctorHome extends Component {
     };
     update(id,t_like,t_dislike,likestate){
         var formData=new FormData();
-        var url="http://localhost:8080/updatelike/"
+        var url="http://124.220.171.17:8800/updatelike/"
         formData.append('doctor_name',this.state.doctorData.name);//医生姓名
         formData.append('id',id)//被更改commentID
         formData.append('likestate',likestate)
@@ -223,8 +223,8 @@ class DoctorHome extends Component {
         var that=this
 
         var formData=new FormData();
-        var url1="http://localhost:8080/initDoctor/"
-        var url2="http://localhost:8080/initComment/"
+        var url1="http://124.220.171.17:8800/initDoctor/"
+        var url2="http://124.220.171.17:8800/initComment/"
         formData.append('ID',id);//医生姓名
         fetch(url1, {
             method : 'POST',
