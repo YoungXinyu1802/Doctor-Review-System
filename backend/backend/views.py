@@ -128,9 +128,7 @@ def return_doc(request):
 # 检索医生
 @csrf_exempt
 def find_doc(request):
-
     doc_name = request.POST.get("doctor_name")
-    print(doc_name)
     doc_set = models.DoctorInfo.objects.filter(doctor_name=doc_name).order_by("score")
     doc_list = []
     return get_doc_info(doc_set, doc_list)
@@ -156,6 +154,7 @@ def return_comment_list(request):
     if doc_set.exists():
         comment_data = models.Comment.objects.filter(doc=doc_set[0]).order_by("likes")
         for c in comment_data:
+            update_approval(c.id)
             comment_list.append({
                 "commentId": c.id,
                 "user": 1,
@@ -176,6 +175,7 @@ def return_comment_list_2(doc_id):
     if doc_set.exists():
         comment_data = models.Comment.objects.filter(doc=doc_set[0]).order_by("likes")
         for c in comment_data:
+            update_approval(c.id)
             comment_list.append({
                 "commentId": c.id,
                 "user": 1,
@@ -191,16 +191,16 @@ def return_comment_list_2(doc_id):
 
 # 更新评分
 @csrf_exempt
-def update_score(_doc, score):
-    doc = models.DoctorInfo.objects.get(id=_doc)
-    doc.score_sum = doc.score_sum + float(score)
-    doc.comment_num = doc.comment_num + 1
-    doc.score = doc.score_sum / doc.comment_num
-    print(_doc)
-    print(doc.doctor_name)
-    print(doc.comment_num)
-    print(doc.score)
-    doc.save()
+def update_score(_doc):
+    d = models.DoctorInfo.objects.get(id=_doc)
+    comment_set = Comment.objects.filter(doc=d)
+    d.score_sum = 0
+    d.comment_num = 0
+    for c in comment_set:
+        d.comment_num = d.comment_num + 1
+        d.score_sum = d.score_sum + c.score
+    d.score = d.score_sum / float(d.comment_num)
+    d.save()
 
 
 # 添加评价
@@ -209,22 +209,34 @@ def create_comment(request):
     # _user = request.POST.get("user")
     _user = 1
     _doc = request.POST.get("doctor_id")
-    print(request.POST)
-    print("user")
-    # print(_doc)
-    # print("doctor_id" + _doc)
+    print("doctor_id" + _doc)
     _score = request.POST.get("score")
     _content = request.POST.get("comment")
     if check_is_commented(_user, _doc) == 1:
         new_comment = models.Comment(user=User.objects.get(id=_user), doc=DoctorInfo.objects.get(id=_doc), score=_score, content=_content)
         new_comment.save()
-        update_score(_user, _score)
+        update_score(_user)
         return return_comment_list_2(_doc)
     else:
         new_comment = models.Comment(user=User.objects.get(id=_user), doc=DoctorInfo.objects.get(id=_doc), score=_score, content=_content)
         new_comment.save()
-        update_score(_doc, _score)
+        update_score(_doc)
         return return_comment_list_2(int(_doc))
+
+
+# 更新赞踩
+@csrf_exempt
+def update_approval(_comment):
+    approval_set = Approval.objects.filter(comment=_comment)
+    c = Comment.objects.get(id=_comment)
+    c.likes = 0
+    c.dislikes = 0
+    for a in approval_set:
+        if a.approval == 1:
+            c.likes = c.likes + 1
+        elif a.approval == 2:
+            c.dislikes = c.dislikes + 1
+    c.save()
 
 
 # 判断是否已经赞踩
