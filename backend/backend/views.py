@@ -199,7 +199,7 @@ def update_score(_doc):
     for c in comment_set:
         d.comment_num = d.comment_num + 1
         d.score_sum = d.score_sum + c.score
-    d.score = d.score_sum / float(d.comment_num)
+    d.score = 0 if d.comment_num == 0 else d.score_sum / float(d.comment_num)
     d.save()
 
 
