@@ -30,18 +30,18 @@ def err(data: object):
 # 获取医生信息
 @csrf_exempt
 def get_doc_info(doc_set, doc_list):
-    doc_list = []
     for d in doc_set:
+        update_score(d.id)
         doc_list.append({
             "id": d.id,
             "name": d.doctor_name,
-            "score": d.score,
+            "score": round(d.score, 2),
             "title": d.position,
             "detail": d.description,
             "post": d.department.department_name
         })
     if len(doc_list):
-        return doc_list
+        return ok(doc_list)
     else:
         return err("找不到符合条件的医生")
 
