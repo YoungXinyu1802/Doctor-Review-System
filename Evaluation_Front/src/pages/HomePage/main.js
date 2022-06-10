@@ -11,6 +11,8 @@ import Search from "antd/es/input/Search";
 import { useNavigate } from "react-router-dom";
 import {doctorList,doctorList1} from '../../MockData/cardData'
 import { Navigate } from 'react-router-dom';
+import {getToken} from "../../utils";
+import axios from "axios";
 
 
 
@@ -57,37 +59,32 @@ const onSearch = value => console.log(value);
 class HomePage extends Component {
     constructor(props) {
         super(props);
+        const token = getToken()
+        if (token) {
+            const url="http://124.220.171.17:3000/api/oauth/verify"
+            let formData=new FormData()
+            formData.append("token",token)
+            axios.get(url, {
+                params: {
+                    token: token
+                }
+            }).then( function (res){
+                if( res.data.code != 0) {
+                    console.log("The token is false")
+                }else{
+                    console.log("The token is true")
+                }
+            }).catch(function (error){
+                console.log(error)
+            })
+        }else{
+            const oldLocation = window.location
+            var url = 'http://124.220.171.17:3000/login?redir='
+            const nowUrl = oldLocation.toString().slice(7)
+            url = url + encodeURIComponent(nowUrl)
+            window.location.href(url)
+        }
         // this.searchDoctor=this.searchDoctor.bind(this)
-        //添加获取token内容
-        //维护Localstorage变量
-        var name=localStorage.getItem("userName")
-        var token=localStorage.getItem("token")
-        localStorage.setItem("permission",false)
-
-        var url="http://124.220.171.17:3000/api/oauth/verify"
-        var formData=new FormData();
-        formData.append("token",token)
-        fetch(url, {
-            method : 'GET',
-            mode : 'cors',
-            body : formData
-        }).then(function(res){
-            if(res.ok){
-                if(!res.data){
-                    localStorage.setItem("userName",res.data.userName)
-                    localStorage.setItem("role",res.data.role)
-                    localStorage.setItem("permission",true)
-                }
-                else{
-                    window.location.href=
-                }
-            }else{
-                console.log('搜索医生请求失败');
-            }
-        }, function(e){
-            console.log('搜索医生请求失败');
-        })
-
     }
 
     state={
