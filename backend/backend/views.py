@@ -227,7 +227,7 @@ def create_comment(request):
 # 更新赞踩
 @csrf_exempt
 def update_approval(_comment):
-    approval_set = Approval.objects.filter(comment=_comment)
+    approval_set = models.Approval.objects.filter(comment=_comment)
     c = Comment.objects.get(id=_comment)
     c.likes = 0
     c.dislikes = 0
