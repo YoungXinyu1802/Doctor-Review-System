@@ -147,6 +147,14 @@ DATABASES = {
         'PASSWORD': 'LLcisB3nxbEJ6W3J', #密码
         'HOST': '127.0.0.1', #主机
         'PORT': '3306', #端口
+    },
+    'management': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'management',
+        'USER': 'Review', #数据库服务器的用户  --看这里！请把这个改成可以连接management组数据库的东西
+        'PASSWORD': 'LLcisB3nxbEJ6W3J', #密码
+        'HOST': '127.0.0.1', #主机
+        'PORT': '3306', #端口
     }
 }
 
