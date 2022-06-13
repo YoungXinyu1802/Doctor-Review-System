@@ -28,6 +28,7 @@ http.interceptors.request.use((config) => {
             if( res.data.code != 0) {
                 console.log("The token is false")
             }else{
+                window.localStorage.setItem('userName', res.data.data.userName)
                 console.log("The token is true")
             }
         }).catch(function (error){

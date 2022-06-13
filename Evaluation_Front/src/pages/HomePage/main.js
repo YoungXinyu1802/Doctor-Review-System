@@ -72,6 +72,7 @@ class HomePage extends Component {
                 if( res.data.code != 0) {
                     console.log("The token is false")
                 }else{
+                    window.localStorage.setItem('userName', res.data.data.userName)
                     console.log("The token is true")
                 }
             }).catch(function (error){
@@ -81,8 +82,10 @@ class HomePage extends Component {
             const oldLocation = window.location
             var url = 'http://124.220.171.17:3000/login?redir='
             const nowUrl = oldLocation.toString().slice(7)
+            //const nowUrl = 'baidu.com'
+            console.log(nowUrl)
             url = url + encodeURIComponent(nowUrl)
-            window.location.href(url)
+            window.location.href = url
         }
         // this.searchDoctor=this.searchDoctor.bind(this)
     }

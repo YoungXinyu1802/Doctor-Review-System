@@ -164,10 +164,12 @@ class DoctorHome extends Component {
 
     };
     update(id,t_like,t_dislike,likestate){
+        const user_name = window.localStorage.getItem('userName')
         var formData=new FormData();
         var url="http://124.220.171.17:8800/updatelike/"
         formData.append('doctor_name',this.state.doctorData.name);//医生姓名
         formData.append('id',id)//被更改commentID
+        formData.append('user_name', user_name)
         formData.append('likestate',likestate)
         formData.append('like',t_like)
         formData.append('dislike',t_dislike)
