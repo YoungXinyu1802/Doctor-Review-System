@@ -14,7 +14,35 @@ from django.db.models import Q
 
 # from models import User
 # from models import Goods
-from .models import User, Comment, DoctorInfo
+from .models import User, Comment, DoctorInfo, Department
+from django.db import connections
+
+
+def update_data():
+    connection = connections['management']
+    cursor = connection.cursor()
+    cursor.execute("select user_id, department from doctor_info;")
+    docs = cursor.fetchall()
+    for doc in docs:
+        sql = "select real_name from user where user_id = " + doc[0] + ";"
+        cursor.execute(sql)
+        d = cursor.fetchone()
+        doc_set = DoctorInfo.objects.filter(department=doc[1], doctor_name=d)
+        if doc_set.exists():
+            continue
+        else:
+            dep_set = Department.objects.filter(department_name=doc[1])
+            if dep_set.exists():
+                continue
+            else:
+                new_dep = Department(department_name=doc[1], description="部门简介")
+                new_dep.save()
+            new_doc = models.DoctorInfo(doctor_name=d, position="主治医生", description=d+"己任职多年，有着丰富的经验\
+            ，曾多次获得国內外多项奨项，广受患者好评", department=Department.objects.get(department_name=str(doc[1])))
+            new_doc.save()
+    connection.commit()
+    cursor.close()
+
 
 MEDIA_ROOT = os.path.join(Path(__file__).resolve().parent.parent.parent, 'backend/Admin')
 
@@ -49,6 +77,7 @@ def get_doc_info(doc_set, doc_list):
 # 热门医生
 @csrf_exempt
 def get_hot_doc(request):
+    update_data()
     dep = request.POST.get("department")
     doc_set = models.DoctorInfo.objects.filter(department=dep).order_by("score")[0:5]
     doc_list = []
@@ -58,11 +87,8 @@ def get_hot_doc(request):
 # 返回部门信息
 @csrf_exempt
 def get_department(request):
+    update_data()
     print(request.POST)
-    # get_json = request.POST.keys()[0]
-    # print(get_json)
-    # get_json = json.loads(get_json)
-    # print(get_json)
     dep = request.POST.get("name")
     print(dep)
     dep_set = models.Department.objects.filter(department_name=dep)
@@ -97,6 +123,7 @@ def get_department(request):
 # 从部门找到医生列表
 @csrf_exempt
 def find_doc_from_department(request):
+    update_data()
     dep = request.POST.get("department")
     doc_set = models.DoctorInfo.objects.filter(department=dep).order_by("score")
     doc_list = []
@@ -106,6 +133,7 @@ def find_doc_from_department(request):
 # 找到医生主页
 @csrf_exempt
 def return_doc(request):
+    update_data()
     # doc_id = 1
     doc_id = request.POST.get("ID")
     doc_set = models.DoctorInfo.objects.filter(id=doc_id)
@@ -128,6 +156,8 @@ def return_doc(request):
 # 检索医生
 @csrf_exempt
 def find_doc(request):
+    update_data()
+    update_data()
     doc_name = request.POST.get("doctor_name")
     doc_set = models.DoctorInfo.objects.filter(doctor_name=doc_name).order_by("score")
     doc_list = []
@@ -147,6 +177,7 @@ def check_is_commented(user, doc):
 # 获取医生评价信息
 @csrf_exempt
 def return_comment_list(request):
+    # user_id = request.POST.get("user_id") # here
     user_id = 1
     doc_id = request.POST.get("ID")
     doc_set = models.DoctorInfo.objects.filter(id=doc_id)
@@ -157,7 +188,7 @@ def return_comment_list(request):
             update_approval(c.id)
             comment_list.append({
                 "commentId": c.id,
-                "user": 1,
+                "user": "匿名用户",
                 "score": c.score,
                 "content": c.content,
                 "dislikes": c.dislikes,
@@ -178,7 +209,7 @@ def return_comment_list_2(doc_id):
             update_approval(c.id)
             comment_list.append({
                 "commentId": c.id,
-                "user": 1,
+                "user": "匿名用户",
                 "score": c.score,
                 "content": c.content,
                 "dislikes": c.dislikes,
@@ -206,7 +237,7 @@ def update_score(_doc):
 # 添加评价
 @csrf_exempt
 def create_comment(request):
-    # _user = request.POST.get("user")
+    # _user = request.POST.get("user_id")  # here
     _user = 1
     _doc = request.POST.get("doctor_id")
     print("doctor_id" + _doc)
@@ -253,7 +284,7 @@ def check_approval(user, comment):
 # 添加赞踩
 @csrf_exempt
 def create_approval(request):
-    # _user = request.POST.get("user")
+    # _user = request.POST.get("user") # here
     _user = 1
     _comment = request.POST.get("id")
     _approval = request.POST.get("likestate")
@@ -279,4 +310,3 @@ def create_approval(request):
                                                   comment=Comment.objects.get(id=_comment))
     print("approval_set[0].approval "+str(approval_set[0].approval))
     return return_comment_list_2(comment[0].doc.id)
-
