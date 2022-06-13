@@ -177,8 +177,14 @@ def check_is_commented(user, doc):
 # 获取医生评价信息
 @csrf_exempt
 def return_comment_list(request):
-    # user_id = request.POST.get("user_id") # here
-    user_id = 1
+    user_name = request.POST.get("user_name")  # here
+    user_set = User.objects.filter(user_name=user_name)
+    if user_set.exists():
+        user_id = user_set[0].id
+    else:
+        new_user = User(user_name=user_name)
+        new_user.save()
+        user_id = new_user.id
     doc_id = request.POST.get("ID")
     doc_set = models.DoctorInfo.objects.filter(id=doc_id)
     comment_list = []
@@ -188,7 +194,7 @@ def return_comment_list(request):
             update_approval(c.id)
             comment_list.append({
                 "commentId": c.id,
-                "user": "匿名用户",
+                "user": c.user.user_name,
                 "score": c.score,
                 "content": c.content,
                 "dislikes": c.dislikes,
@@ -200,7 +206,7 @@ def return_comment_list(request):
 
 
 @csrf_exempt
-def return_comment_list_2(doc_id):
+def return_comment_list_2(doc_id, user_id):
     doc_set = models.DoctorInfo.objects.filter(id=doc_id)
     comment_list = []
     if doc_set.exists():
@@ -209,13 +215,13 @@ def return_comment_list_2(doc_id):
             update_approval(c.id)
             comment_list.append({
                 "commentId": c.id,
-                "user": "匿名用户",
+                "user": c.user.user_name,
                 "score": c.score,
                 "content": c.content,
                 "dislikes": c.dislikes,
                 "likes": c.likes,
                 "author": c.user.user_name,
-                "likeState": check_approval(c.user.id, c.id),
+                "likeState": check_approval(user_id, c.id),
             })
     return ok(comment_list)
 
@@ -237,8 +243,14 @@ def update_score(_doc):
 # 添加评价
 @csrf_exempt
 def create_comment(request):
-    # _user = request.POST.get("user_id")  # here
-    _user = 1
+    user_name = request.POST.get("user_name")  # here
+    user_set = User.objects.filter(user_name=user_name)
+    if user_set.exists():
+        _user = user_set[0].id
+    else:
+        new_user = User(user_name=user_name)
+        new_user.save()
+        _user = new_user.id
     _doc = request.POST.get("doctor_id")
     print("doctor_id" + _doc)
     _score = request.POST.get("score")
@@ -247,12 +259,12 @@ def create_comment(request):
         new_comment = models.Comment(user=User.objects.get(id=_user), doc=DoctorInfo.objects.get(id=_doc), score=_score, content=_content)
         new_comment.save()
         update_score(_user)
-        return return_comment_list_2(_doc)
+        return return_comment_list_2(_user, _doc)
     else:
         new_comment = models.Comment(user=User.objects.get(id=_user), doc=DoctorInfo.objects.get(id=_doc), score=_score, content=_content)
         new_comment.save()
         update_score(_doc)
-        return return_comment_list_2(int(_doc))
+        return return_comment_list_2(_user, int(_doc))
 
 
 # 更新赞踩
@@ -284,8 +296,14 @@ def check_approval(user, comment):
 # 添加赞踩
 @csrf_exempt
 def create_approval(request):
-    # _user = request.POST.get("user") # here
-    _user = 1
+    user_name = request.POST.get("user_name")  # here
+    user_set = User.objects.filter(user_name=user_name)
+    if user_set.exists():
+        _user = user_set[0].id
+    else :
+        new_user = User(user_name=user_name)
+        new_user.save()
+        _user = new_user.id
     _comment = request.POST.get("id")
     _approval = request.POST.get("likestate")
     print("_approval "+_approval)
