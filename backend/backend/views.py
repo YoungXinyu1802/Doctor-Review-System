@@ -24,7 +24,7 @@ def update_data():
     cursor.execute("select user_id, department from doctor_info;")
     docs = cursor.fetchall()
     for doc in docs:
-        sql = "select real_name from user where user_id = " + doc[0] + ";"
+        sql = "select real_name from user where id = " + str(doc[0]) + ";"
         cursor.execute(sql)
         d = cursor.fetchone()
         doc_set = DoctorInfo.objects.filter(department=doc[1], doctor_name=d)
@@ -37,7 +37,7 @@ def update_data():
             else:
                 new_dep = Department(department_name=doc[1], description="部门简介")
                 new_dep.save()
-            new_doc = models.DoctorInfo(doctor_name=d, position="主治医生", description=d+"己任职多年，有着丰富的经验\
+            new_doc = models.DoctorInfo(doctor_name=d[0], position="主治医生", description=d[0]+"己任职多年，有着丰富的经验\
             ，曾多次获得国內外多项奨项，广受患者好评", department=Department.objects.get(department_name=str(doc[1])))
             new_doc.save()
     connection.commit()
@@ -52,7 +52,7 @@ def ok(data: object):
 
 
 def err(data: object):
-    return JsonResponse({'code': 1, 'message': '操作失败', 'data': data})
+    return JsonResponse({'code': 1, 'message': '操作失败', 'data': None})
 
 
 # 获取医生信息
@@ -178,13 +178,16 @@ def check_is_commented(user, doc):
 @csrf_exempt
 def return_comment_list(request):
     user_name = request.POST.get("user_name")  # here
-    user_set = User.objects.filter(user_name=user_name)
-    if user_set.exists():
-        user_id = user_set[0].id
+    if user_name == None:
+        user_id = 1
     else:
-        new_user = User(user_name=user_name)
-        new_user.save()
-        user_id = new_user.id
+        user_set = User.objects.filter(user_name=user_name)
+        if user_set.exists():
+            user_id = user_set[0].id
+        else:
+            new_user = User(user_name=user_name)
+            new_user.save()
+            user_id = new_user.id
     doc_id = request.POST.get("ID")
     doc_set = models.DoctorInfo.objects.filter(id=doc_id)
     comment_list = []
@@ -244,13 +247,16 @@ def update_score(_doc):
 @csrf_exempt
 def create_comment(request):
     user_name = request.POST.get("user_name")  # here
-    user_set = User.objects.filter(user_name=user_name)
-    if user_set.exists():
-        _user = user_set[0].id
+    if user_name == None:
+        _user = 1
     else:
-        new_user = User(user_name=user_name)
-        new_user.save()
-        _user = new_user.id
+        user_set = User.objects.filter(user_name=user_name)
+        if user_set.exists():
+            _user = user_set[0].id
+        else:
+            new_user = User(user_name=user_name)
+            new_user.save()
+            _user = new_user.id
     _doc = request.POST.get("doctor_id")
     print("doctor_id" + _doc)
     _score = request.POST.get("score")
@@ -297,13 +303,16 @@ def check_approval(user, comment):
 @csrf_exempt
 def create_approval(request):
     user_name = request.POST.get("user_name")  # here
-    user_set = User.objects.filter(user_name=user_name)
-    if user_set.exists():
-        _user = user_set[0].id
-    else :
-        new_user = User(user_name=user_name)
-        new_user.save()
-        _user = new_user.id
+    if user_name == None:
+        _user = 1
+    else:
+        user_set = User.objects.filter(user_name=user_name)
+        if user_set.exists():
+            _user = user_set[0].id
+        else:
+            new_user = User(user_name=user_name)
+            new_user.save()
+            _user = new_user.id
     _comment = request.POST.get("id")
     _approval = request.POST.get("likestate")
     print("_approval "+_approval)

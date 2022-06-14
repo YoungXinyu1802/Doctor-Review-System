@@ -225,9 +225,11 @@ class DoctorHome extends Component {
         var that=this
 
         var formData=new FormData();
+	const user_name = window.localStorage.getItem('userName')
         var url1="http://124.220.171.17:8800/initDoctor/"
         var url2="http://124.220.171.17:8800/initComment/"
         formData.append('ID',id);//医生姓名
+	formData.append('user_name', user_name)
         fetch(url1, {
             method : 'POST',
             mode : 'cors',
@@ -238,9 +240,16 @@ class DoctorHome extends Component {
                     console.log(data)
                     console.log("success");
                     //传回一个data
-                    that.setState({
-                        doctorData:data.data[0]
-                    })
+                    if (data === null){
+                        that.setState({
+                            doctorData:[]
+                        })
+		   }
+		   else {
+                        that.setState({
+                            doctorData:data.data[0]
+                        })
+		  }
 
                 })
             }else{

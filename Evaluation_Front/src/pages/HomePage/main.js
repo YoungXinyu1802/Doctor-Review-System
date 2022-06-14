@@ -135,12 +135,21 @@ class HomePage extends Component {
         }).then(function(res){
             if(res.ok){
                 res.json().then(function(data){
-                    console.log(data)
+                    console.log(data.data)
+		    console.log(data.code)
                     console.log("success");
                     //对data进行操作
-                    that.setState({
-                        searchRes:data.data
-                    });//更新searchRes
+                    if (data.code===1){
+                        that.setState({
+                            doctorData:[]
+                        });
+                    }
+                    else {
+                         that.setState({
+                             doctorData:data.data
+                        });
+                    }
+                  //更新searchRes
                 })
             }else{
                 console.log('搜索医生请求失败');
@@ -189,11 +198,7 @@ class HomePage extends Component {
                             <div style={style}/>
                         </Col>
                         <Col className="gutter-row" span={2}>
-                            <div style={style} className="headPic" align="center">
-                                <Dropdown.Button overlay={menu} size={"large"}
-                                                 style={{marginTop: '5px'}} icon={<UserOutlined/>}>
-                                </Dropdown.Button>
-                            </div>
+                            <div style={style}/>
                         </Col>
                     </Row>
 

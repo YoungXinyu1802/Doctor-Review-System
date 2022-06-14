@@ -1,0 +1,1528 @@
+  File "/www/wwwroot/review/run.sh", line 2
+    source /root/.bashrc
+                 ^
+SyntaxError: invalid syntax
+  File "/www/wwwroot/review/run.sh", line 2
+    source /root/.bashrc
+                 ^
+SyntaxError: invalid syntax
+Watching for file changes with StatReloader
+[10/Jun/2022 15:02:42] "GET / HTTP/1.1" 200 644
+[10/Jun/2022 15:04:38] "POST /department/ HTTP/1.1" 200 976
+[10/Jun/2022 15:05:10] "POST /department/ HTTP/1.1" 200 976
+[10/Jun/2022 15:05:18] "POST /searchdoctor/ HTTP/1.1" 200 122
+Internal Server Error: /initDoctor/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 111, in return_doc
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+Internal Server Error: /initComment/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 152, in return_comment_list
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+[10/Jun/2022 15:05:20] "POST /initDoctor/ HTTP/1.1" 500 133359
+[10/Jun/2022 15:05:20] "POST /initComment/ HTTP/1.1" 500 133637
+[10/Jun/2022 15:05:23] "POST /searchdoctor/ HTTP/1.1" 200 122
+Internal Server Error: /initComment/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 152, in return_comment_list
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+Internal Server Error: /initDoctor/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 111, in return_doc
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+[10/Jun/2022 15:05:25] "POST /initComment/ HTTP/1.1" 500 133637
+[10/Jun/2022 15:05:25] "POST /initDoctor/ HTTP/1.1" 500 133360
+[10/Jun/2022 15:06:08] "POST /department/ HTTP/1.1" 200 976
+[10/Jun/2022 15:10:49] "GET / HTTP/1.1" 200 644
+[10/Jun/2022 15:10:49] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[10/Jun/2022 15:10:50] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+Not Found: /favicon.ico
+[10/Jun/2022 15:10:50] "GET /favicon.ico HTTP/1.1" 404 2900
+[10/Jun/2022 15:10:55] "POST /department/ HTTP/1.1" 200 976
+[10/Jun/2022 15:10:55] "GET /static/media/doctor_1.def389160d219cbf5223.png HTTP/1.1" 200 239953
+[10/Jun/2022 15:11:08] "POST /searchdoctor/ HTTP/1.1" 200 122
+[10/Jun/2022 15:15:41] code 400, message Bad request version ("¯nãY»bhlÿ(=':©\x82ÙoÈ¢×\x93\x98´ï\x80å¹\x90\x00(À")
+[10/Jun/2022 15:15:41] You're accessing the development server over HTTPS, but it only supports HTTP.
+
+[10/Jun/2022 16:32:30] "GET / HTTP/1.1" 200 644
+[10/Jun/2022 16:32:31] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+Not Found: /favicon.ico
+[10/Jun/2022 16:32:32] "GET /favicon.ico HTTP/1.1" 404 2900
+[10/Jun/2022 16:32:42] "GET / HTTP/1.1" 200 644
+[10/Jun/2022 16:38:58] "GET / HTTP/1.1" 200 644
+[10/Jun/2022 16:38:59] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[10/Jun/2022 16:38:59] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+Not Found: /favicon.ico
+[10/Jun/2022 16:38:59] "GET /favicon.ico HTTP/1.1" 404 2900
+[10/Jun/2022 16:41:44] "GET / HTTP/1.1" 200 644
+[10/Jun/2022 16:41:44] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[10/Jun/2022 16:41:45] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+[10/Jun/2022 16:41:54] "POST /department/ HTTP/1.1" 200 730
+[10/Jun/2022 16:41:54] "GET /static/media/doctor_1.def389160d219cbf5223.png HTTP/1.1" 200 239953
+[10/Jun/2022 16:42:24] "GET / HTTP/1.1" 200 644
+[10/Jun/2022 16:42:24] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[10/Jun/2022 16:42:25] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+[10/Jun/2022 16:42:37] "GET / HTTP/1.1" 200 644
+[10/Jun/2022 16:42:37] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[10/Jun/2022 16:42:38] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+[10/Jun/2022 16:51:28] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+[10/Jun/2022 16:51:28] "  à          " 400 -
+[10/Jun/2022 17:12:48] code 400, message Bad request syntax ('\x05\x01\x00')
+[10/Jun/2022 17:12:48] " " 400 -
+Not Found: /http:/passport.baidu.com/
+[10/Jun/2022 17:12:48] "GET http://passport.baidu.com/ HTTP/1.1" 404 1829
+[10/Jun/2022 17:13:24] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+[10/Jun/2022 17:13:24] " Pg)§ê " 400 -
+[10/Jun/2022 17:37:48] code 400, message Bad request syntax ('\x05\x03\x00\x01\x02')
+[10/Jun/2022 17:37:48] " " 400 -
+[10/Jun/2022 17:45:24] "GET /initComment/ HTTP/1.1" 200 62
+[10/Jun/2022 18:26:52] code 400, message Bad request syntax ('\x05\x01\x00')
+[10/Jun/2022 18:26:52] " " 400 -
+[10/Jun/2022 18:27:08] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+[10/Jun/2022 18:27:08] " Pg)§ê " 400 -
+Not Found: /http:/passport.baidu.com/
+[10/Jun/2022 18:27:10] "GET http://passport.baidu.com/ HTTP/1.1" 404 1829
+[10/Jun/2022 21:16:41] code 400, message Bad request syntax ('\x05\x01\x00')
+[10/Jun/2022 21:16:41] " " 400 -
+[10/Jun/2022 21:16:50] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+[10/Jun/2022 21:16:50] " Pg)§ê " 400 -
+[10/Jun/2022 21:16:56] code 400, message Bad request syntax ('\x05\x03\x00\x01\x02')
+[10/Jun/2022 21:16:56] " " 400 -
+Not Found: /http:/passport.baidu.com/
+[10/Jun/2022 21:17:01] "GET http://passport.baidu.com/ HTTP/1.1" 404 1829
+Not Found: /http:/passport.baidu.com/
+[10/Jun/2022 22:45:03] "GET http://passport.baidu.com/ HTTP/1.1" 404 1829
+[10/Jun/2022 22:45:04] code 400, message Bad request syntax ('\x05\x01\x00')
+[10/Jun/2022 22:45:04] " " 400 -
+[10/Jun/2022 22:45:32] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+[10/Jun/2022 22:45:32] " Pg)§ê " 400 -
+[11/Jun/2022 03:03:14] "GET / HTTP/1.1" 200 644
+[11/Jun/2022 03:51:02] "GET / HTTP/1.1" 200 644
+[11/Jun/2022 03:51:03] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[11/Jun/2022 03:51:03] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+Not Found: /favicon.ico
+[11/Jun/2022 03:51:03] "GET /favicon.ico HTTP/1.1" 404 2900
+[11/Jun/2022 03:51:11] "POST /department/ HTTP/1.1" 200 1409
+[11/Jun/2022 03:51:11] "GET /static/media/doctor_1.def389160d219cbf5223.png HTTP/1.1" 200 239953
+[11/Jun/2022 03:51:20] "POST /department/ HTTP/1.1" 200 1571
+[11/Jun/2022 03:51:29] "POST /department/ HTTP/1.1" 200 976
+[11/Jun/2022 03:51:37] "POST /department/ HTTP/1.1" 200 1067
+[11/Jun/2022 03:51:51] "POST /searchdoctor/ HTTP/1.1" 200 122
+[11/Jun/2022 03:51:58] "POST /searchdoctor/ HTTP/1.1" 200 122
+Internal Server Error: /initDoctor/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 111, in return_doc
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+Internal Server Error: /initComment/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 152, in return_comment_list
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+[11/Jun/2022 03:52:00] "POST /initComment/ HTTP/1.1" 500 124097
+[11/Jun/2022 03:52:00] "POST /initDoctor/ HTTP/1.1" 500 123819
+[11/Jun/2022 03:52:14] "POST /addComments/ HTTP/1.1" 200 2689
+[11/Jun/2022 03:52:18] "GET / HTTP/1.1" 200 644
+Internal Server Error: /initDoctor/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 111, in return_doc
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+Internal Server Error: /initComment/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 152, in return_comment_list
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+[11/Jun/2022 03:52:18] "POST /initComment/ HTTP/1.1" 500 123876
+[11/Jun/2022 03:52:18] "POST /initDoctor/ HTTP/1.1" 500 123598
+[11/Jun/2022 03:52:21] "GET / HTTP/1.1" 200 644
+Internal Server Error: /initComment/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 152, in return_comment_list
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+Internal Server Error: /initDoctor/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 111, in return_doc
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+[11/Jun/2022 03:52:21] "POST /initComment/ HTTP/1.1" 500 123876
+[11/Jun/2022 03:52:21] "POST /initDoctor/ HTTP/1.1" 500 123598
+[11/Jun/2022 03:52:23] "GET / HTTP/1.1" 200 644
+Internal Server Error: /initDoctor/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 111, in return_doc
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+Internal Server Error: /initComment/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 152, in return_comment_list
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+[11/Jun/2022 03:52:23] "POST /initComment/ HTTP/1.1" 500 123876
+[11/Jun/2022 03:52:23] "POST /initDoctor/ HTTP/1.1" 500 123598
+[11/Jun/2022 03:58:06] "POST /department/ HTTP/1.1" 200 730
+Performing system checks...
+
+System check identified no issues (0 silenced).
+June 10, 2022 - 15:02:20
+Django version 3.2.8, using settings 'DoctorReview.settings'
+Starting development server at http://0.0.0.0:8800/
+Quit the server with CONTROL-C.
+<QueryDict: {'name': ['皮肤科']}>
+皮肤科
+1
+['我们的专业皮肤科团队致力于为不同年龄人士及各种皮肤问题的患者提供全面的诊断和治疗。']
+{'description': ['我们的专业皮肤科团队致力于为不同年龄人士及各种皮肤问题的患者提供全面的诊断和治疗。']}
+[{'doctorName': '袁林俐', 'position': '医士', 'doctorDescription': '袁林俐己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '于吉月', 'position': '主治医师', 'doctorDescription': '于吉月己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['皮肤科']}>
+皮肤科
+1
+['我们的专业皮肤科团队致力于为不同年龄人士及各种皮肤问题的患者提供全面的诊断和治疗。']
+{'description': ['我们的专业皮肤科团队致力于为不同年龄人士及各种皮肤问题的患者提供全面的诊断和治疗。']}
+[{'doctorName': '袁林俐', 'position': '医士', 'doctorDescription': '袁林俐己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '于吉月', 'position': '主治医师', 'doctorDescription': '于吉月己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['皮肤科']}>
+皮肤科
+1
+['我们的专业皮肤科团队致力于为不同年龄人士及各种皮肤问题的患者提供全面的诊断和治疗。']
+{'description': ['我们的专业皮肤科团队致力于为不同年龄人士及各种皮肤问题的患者提供全面的诊断和治疗。']}
+[{'doctorName': '袁林俐', 'position': '医士', 'doctorDescription': '袁林俐己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '于吉月', 'position': '主治医师', 'doctorDescription': '于吉月己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['皮肤科']}>
+皮肤科
+1
+['我们的专业皮肤科团队致力于为不同年龄人士及各种皮肤问题的患者提供全面的诊断和治疗。']
+{'description': ['我们的专业皮肤科团队致力于为不同年龄人士及各种皮肤问题的患者提供全面的诊断和治疗。']}
+[{'doctorName': '袁林俐', 'position': '医士', 'doctorDescription': '袁林俐己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '于吉月', 'position': '主治医师', 'doctorDescription': '于吉月己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['泌尿外科']}>
+泌尿外科
+1
+['']
+{'description': ['']}
+[{'doctorName': '岑瑶友', 'position': '医师', 'doctorDescription': '岑瑶友己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '鲁明云', 'position': '主任医师', 'doctorDescription': '鲁明云己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['口腔科']}>
+口腔科
+1
+['本院口腔外科执行业务范围从软组织到硬组织有许多不同诊治项目。 诊治项目有一般及困难拔牙、阻生牙与多生牙手术、植牙手术、其他之牙齿与齿槽骨手术、假牙准备前手术、颚颜面外伤、头颈部感染、良性肿瘤、囊肿、口腔黏膜病变、唾液腺疾病等。']
+{'description': ['本院口腔外科执行业务范围从软组织到硬组织有许多不同诊治项目。 诊治项目有一般及困难拔牙、阻生牙与多生牙手术、植牙手术、其他之牙齿与齿槽骨手术、假牙准备前手术、颚颜面外伤、头颈部感染、良性肿瘤、囊肿、口腔黏膜病变、唾液腺疾病等。']}
+[{'doctorName': '周英义', 'position': '医师', 'doctorDescription': '周英义己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '韦鑫佩', 'position': '副主任医师', 'doctorDescription': '韦鑫佩己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['儿科']}>
+儿科
+1
+['儿科部是本港其中一个主要的儿科部门，为中九龙地区提供二十四小时服务。旨在由专业医疗及技术人员带领下，以“儿童为本”的理念，为有需要的儿童及其家庭提供高质素及全面的儿科服务。']
+{'description': ['儿科部是本港其中一个主要的儿科部门，为中九龙地区提供二十四小时服务。旨在由专业医疗及技术人员带领下，以“儿童为本”的理念，为有需要的儿童及其家庭提供高质素及全面的儿科服务。']}
+[{'doctorName': '倪财霞', 'position': '医士', 'doctorDescription': '倪财霞己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '贺儒盛', 'position': '主任医师', 'doctorDescription': '贺儒盛己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '谢汉伯', 'position': '副主任医师', 'doctorDescription': '谢汉伯己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['皮肤科']}>
+皮肤科
+1
+['我们的专业皮肤科团队致力于为不同年龄人士及各种皮肤问题的患者提供全面的诊断和治疗。']
+{'description': ['我们的专业皮肤科团队致力于为不同年龄人士及各种皮肤问题的患者提供全面的诊断和治疗。']}
+[{'doctorName': '袁林俐', 'position': '医士', 'doctorDescription': '袁林俐己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '于吉月', 'position': '主治医师', 'doctorDescription': '于吉月己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['产科']}>
+产科
+1
+['']
+{'description': ['']}
+[{'doctorName': '许仰天', 'position': '主任医师', 'doctorDescription': '许仰天己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '于丰光', 'position': '主治医师', 'doctorDescription': '于丰光己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '卜俞筠', 'position': '副主任医师', 'doctorDescription': '卜俞筠己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+doctor_id1
+<QueryDict: {'name': ['泌尿外科']}>
+泌尿外科
+1
+['']
+{'description': ['']}
+[{'doctorName': '岑瑶友', 'position': '医师', 'doctorDescription': '岑瑶友己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '鲁明云', 'position': '主任医师', 'doctorDescription': '鲁明云己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['产科']}>
+产科
+1
+['']
+{'description': ['']}
+[11/Jun/2022 03:58:15] "POST /department/ HTTP/1.1" 200 1067
+[11/Jun/2022 03:58:26] "POST /searchdoctor/ HTTP/1.1" 200 122
+Internal Server Error: /initDoctor/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 111, in return_doc
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+Internal Server Error: /initComment/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 152, in return_comment_list
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+[11/Jun/2022 03:58:28] "POST /initDoctor/ HTTP/1.1" 500 123598
+[11/Jun/2022 03:58:28] "POST /initComment/ HTTP/1.1" 500 123876
+[11/Jun/2022 03:59:01] "POST /addComments/ HTTP/1.1" 200 2879
+[11/Jun/2022 03:59:13] "POST /searchdoctor/ HTTP/1.1" 200 122
+Internal Server Error: /initDoctor/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 111, in return_doc
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+Internal Server Error: /initComment/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 152, in return_comment_list
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+[11/Jun/2022 03:59:14] "POST /initComment/ HTTP/1.1" 500 123876
+[11/Jun/2022 03:59:14] "POST /initDoctor/ HTTP/1.1" 500 123598
+[11/Jun/2022 03:59:32] "POST /addComments/ HTTP/1.1" 200 3070
+[11/Jun/2022 08:12:47] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+[11/Jun/2022 08:12:47] " Pg)§ê " 400 -
+Not Found: /http:/passport.baidu.com/
+[11/Jun/2022 08:13:01] "GET http://passport.baidu.com/ HTTP/1.1" 404 1829
+[11/Jun/2022 08:13:06] code 400, message Bad request syntax ('\x05\x01\x00')
+[11/Jun/2022 08:13:06] " " 400 -
+[11/Jun/2022 08:13:55] code 400, message Bad request syntax ('\x05\x03\x00\x01\x02')
+[11/Jun/2022 08:13:55] " " 400 -
+[11/Jun/2022 08:21:24] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+[11/Jun/2022 08:21:24] " Pg)§ê " 400 -
+Not Found: /http:/passport.baidu.com/
+[11/Jun/2022 08:21:24] "GET http://passport.baidu.com/ HTTP/1.1" 404 1829
+[11/Jun/2022 08:21:37] code 400, message Bad request syntax ('\x05\x01\x00')
+[11/Jun/2022 08:21:37] " " 400 -
+[11/Jun/2022 08:36:17] "GET / HTTP/1.1" 200 644
+[11/Jun/2022 08:36:18] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+[11/Jun/2022 08:36:19] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[11/Jun/2022 09:26:22] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[11/Jun/2022 09:26:22] "  /*à     Cookie: mstshash=Administr" 400 -
+[11/Jun/2022 09:32:42] "GET / HTTP/1.1" 200 644
+Not Found: /favicon.ico
+[11/Jun/2022 09:32:42] "GET /favicon.ico HTTP/1.1" 404 2900
+[11/Jun/2022 09:38:00] "GET / HTTP/1.1" 200 644
+[11/Jun/2022 09:38:17] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+[11/Jun/2022 09:38:17] "  à          " 400 -
+[11/Jun/2022 09:52:48] "GET / HTTP/1.1" 200 644
+[11/Jun/2022 09:52:49] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[11/Jun/2022 09:52:49] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+Not Found: /favicon.ico
+[11/Jun/2022 09:52:49] "GET /favicon.ico HTTP/1.1" 404 2900
+[11/Jun/2022 09:52:54] "POST /department/ HTTP/1.1" 200 1374
+[11/Jun/2022 09:52:55] "GET /static/media/doctor_1.def389160d219cbf5223.png HTTP/1.1" 200 239953
+[11/Jun/2022 09:53:13] "GET / HTTP/1.1" 200 644
+[11/Jun/2022 09:53:16] "POST /department/ HTTP/1.1" 200 1983
+[11/Jun/2022 09:53:34] "POST /department/ HTTP/1.1" 200 736
+[11/Jun/2022 09:53:38] "POST /department/ HTTP/1.1" 200 1051
+[11/Jun/2022 09:53:42] "POST /department/ HTTP/1.1" 200 2012
+[11/Jun/2022 10:02:11] "GET / HTTP/1.1" 200 644
+[11/Jun/2022 10:02:12] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[11/Jun/2022 10:02:12] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+Not Found: /favicon.ico
+[11/Jun/2022 10:02:12] "GET /favicon.ico HTTP/1.1" 404 2900
+[11/Jun/2022 10:02:28] "POST /department/ HTTP/1.1" 200 1409
+[11/Jun/2022 10:02:28] "GET /static/media/doctor_1.def389160d219cbf5223.png HTTP/1.1" 200 239953
+[11/Jun/2022 10:02:44] "POST /searchdoctor/ HTTP/1.1" 200 122
+[11/Jun/2022 10:02:53] "POST /searchdoctor/ HTTP/1.1" 200 122
+[11/Jun/2022 10:03:02] "POST /department/ HTTP/1.1" 200 1356
+[11/Jun/2022 10:03:11] "POST /department/ HTTP/1.1" 200 976
+Not Found: /robots.txt
+[11/Jun/2022 10:06:32] "GET /robots.txt HTTP/1.1" 404 2892
+[11/Jun/2022 10:06:40] "GET / HTTP/1.1" 200 644
+[11/Jun/2022 10:06:44] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+[11/Jun/2022 10:06:44] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[11/Jun/2022 10:07:11] "GET / HTTP/1.1" 200 644
+Internal Server Error: /department/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 70, in get_department
+    desp = dep_set[0].description
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 318, in __getitem__
+    return qs._result_cache[0]
+IndexError: list index out of range
+[11/Jun/2022 10:28:54] "GET /department/ HTTP/1.1" 500 66080
+[11/Jun/2022 10:42:17] "GET / HTTP/1.1" 200 644
+Not Found: /favicon.ico
+[11/Jun/2022 10:42:18] "GET /favicon.ico HTTP/1.1" 404 2900
+[11/Jun/2022 10:42:23] code 400, message Bad request syntax ('\x03\x8bq¤b\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00')
+[11/Jun/2022 10:42:23] "q¤b                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            " 400 -
+[11/Jun/2022 10:42:53] "GET / HTTP/1.1" 200 644
+[11/Jun/2022 16:12:28] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[11/Jun/2022 16:12:28] "  /*à     Cookie: mstshash=Administr" 400 -
+[11/Jun/2022 16:39:48] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+[11/Jun/2022 16:39:48] "  à          " 400 -
+Not Found: /http:/passport.baidu.com/
+[11/Jun/2022 16:48:57] "GET http://passport.baidu.com/ HTTP/1.1" 404 1829
+[11/Jun/2022 16:49:18] code 400, message Bad request syntax ('\x05\x01\x00')
+[11/Jun/2022 16:49:18] " " 400 -
+[11/Jun/2022 16:49:26] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+[11/Jun/2022 16:49:26] " Pg)§ê " 400 -
+[11/Jun/2022 16:49:30] code 400, message Bad request syntax ('\x05\x03\x00\x01\x02')
+[11/Jun/2022 16:49:30] " " 400 -
+[11/Jun/2022 20:33:15] code 400, message Bad request version ('À\x13À')
+[11/Jun/2022 20:33:15] You're accessing the development server over HTTPS, but it only supports HTTP.
+
+[11/Jun/2022 20:33:25] "GET / HTTP/1.1" 200 644
+[11/Jun/2022 20:33:26,657] - Broken pipe from ('111.7.96.148', 58334)
+
+[11/Jun/2022 20:34:06] "GET / HTTP/1.1" 200 644
+[11/Jun/2022 20:34:06] "GET / HTTP/1.1" 200 644
+[11/Jun/2022 20:34:06] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+Not Found: /favicon.ico
+[11/Jun/2022 20:34:10] "GET /favicon.ico HTTP/1.1" 404 2900
+[11/Jun/2022 20:34:10,531] - Broken pipe from ('211.95.50.8', 12285)
+
+Not Found: /http:/passport.baidu.com/
+[11/Jun/2022 22:31:01] "GET http://passport.baidu.com/ HTTP/1.1" 404 1829
+[11/Jun/2022 22:31:09] code 400, message Bad request syntax ('\x05\x01\x00')
+[11/Jun/2022 22:31:09] " " 400 -
+[11/Jun/2022 22:31:20] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+[11/Jun/2022 22:31:20] " Pg)§ê " 400 -
+[11/Jun/2022 22:31:23] code 400, message Bad request syntax ('\x05\x03\x00\x01\x02')
+[11/Jun/2022 22:31:23] " " 400 -
+[11/Jun/2022 23:28:35] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+[11/Jun/2022 23:28:35] " Pg)§ê " 400 -
+[11/Jun/2022 23:28:53] code 400, message Bad request syntax ('\x05\x01\x00')
+[11/Jun/2022 23:28:53] " " 400 -
+Not Found: /http:/passport.baidu.com/
+[11/Jun/2022 23:29:00] "GET http://passport.baidu.com/ HTTP/1.1" 404 1829
+[12/Jun/2022 02:22:32] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+[12/Jun/2022 02:22:32] "  à          " 400 -
+[12/Jun/2022 04:11:11] "GET / HTTP/1.1" 200 644
+[12/Jun/2022 04:11:11] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[12/Jun/2022 04:11:12] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+Not Found: /favicon.ico
+[12/Jun/2022 04:11:13] "GET /favicon.ico HTTP/1.1" 404 2900
+[12/Jun/2022 04:36:27] "GET / HTTP/1.1" 200 644
+[12/Jun/2022 04:37:06] "GET / HTTP/1.1" 200 644
+[12/Jun/2022 04:37:09] "GET /static/css/main.9fc8d8b4.css.map HTTP/1.1" 200 1529779
+[12/Jun/2022 04:37:12] "GET /static/js/main.8c258a47.js.map HTTP/1.1" 200 3660857
+[12/Jun/2022 05:18:08] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[12/Jun/2022 05:18:08] "  /*à     Cookie: mstshash=Administr" 400 -
+[12/Jun/2022 06:11:50] "GET / HTTP/1.1" 200 644
+[12/Jun/2022 06:11:51] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+[12/Jun/2022 06:11:51] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+Not Found: /favicon.ico
+[12/Jun/2022 06:11:52] "GET /favicon.ico HTTP/1.1" 404 2900
+[12/Jun/2022 06:11:56] "GET / HTTP/1.1" 200 644
+[12/Jun/2022 07:34:36] "GET / HTTP/1.1" 200 644
+Not Found: /favicon.ico
+[12/Jun/2022 07:34:37] "GET /favicon.ico HTTP/1.1" 404 2900
+[{'doctorName': '许仰天', 'position': '主任医师', 'doctorDescription': '许仰天己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '于丰光', 'position': '主治医师', 'doctorDescription': '于丰光己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '卜俞筠', 'position': '副主任医师', 'doctorDescription': '卜俞筠己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+doctor_id1
+doctor_id1
+<QueryDict: {'name': ['精神心理科']}>
+精神心理科
+1
+['']
+{'description': ['']}
+[{'doctorName': '栢文秋', 'position': '医士', 'doctorDescription': '栢文秋己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '伍侑文', 'position': '副主任医师', 'doctorDescription': '伍侑文己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '康雪莲', 'position': '主治医师', 'doctorDescription': '康雪莲己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '黄妤瑜', 'position': '主任医师', 'doctorDescription': '黄妤瑜己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['骨科']}>
+骨科
+1
+['骨科中心坐落于中半山嘉诺撒医院，由邱明才教授于1980年成立。本中心提供全面骨科服务，由急症以至预约诊症。我们的愿景是为大众提供全面及高质素骨科治疗。骨科是独立成科的医学专业，当中包括创伤、运动医学、关节置换、脊椎外科、手外科、足踝外科、小儿骨科、肿瘤骨科、复康科。骨科中心的骨科专科医生提供全面治疗为病人作出适当的诊治。']
+{'description': ['骨科中心坐落于中半山嘉诺撒医院，由邱明才教授于1980年成立。本中心提供全面骨科服务，由急症以至预约诊症。我们的愿景是为大众提供全面及高质素骨科治疗。骨科是独立成科的医学专业，当中包括创伤、运动医学、关节置换、脊椎外科、手外科、足踝外科、小儿骨科、肿瘤骨科、复康科。骨科中心的骨科专科医生提供全面治疗为病人作出适当的诊治。']}
+[{'doctorName': '葛卉月', 'position': '医师', 'doctorDescription': '葛卉月己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '秦豪亨', 'position': '医师', 'doctorDescription': '秦豪亨己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '孙上怡', 'position': '主治医师', 'doctorDescription': '孙上怡己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['耳鼻咽喉科']}>
+耳鼻咽喉科
+1
+['']
+{'description': ['']}
+[{'doctorName': '孟佐江', 'position': '医士', 'doctorDescription': '孟佐江己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '卞邦昆', 'position': '副主任医师', 'doctorDescription': '卞邦昆己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['妇科']}>
+妇科
+1
+['妇产科始创于1964年，现今本部门辖下有病床126张及超过250名热诚的员工。本部门于2016年5月通过认证成为全港首间“爱婴医院”']
+{'description': ['妇产科始创于1964年，现今本部门辖下有病床126张及超过250名热诚的员工。本部门于2016年5月通过认证成为全港首间“爱婴医院”']}
+[{'doctorName': '云亭恭', 'position': '医师', 'doctorDescription': '云亭恭己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '郑雪莲', 'position': '主任医师', 'doctorDescription': '郑雪莲己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['呼吸内科']}>
+呼吸内科
+1
+['']
+{'description': ['']}
+[{'doctorName': '姜治禾', 'position': '医师', 'doctorDescription': '姜治禾己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '严威信', 'position': '主任医师', 'doctorDescription': '严威信己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '罗孜帆', 'position': '副主任医师', 'doctorDescription': '罗孜帆己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '顾爱财', 'position': '主治医师', 'doctorDescription': '顾爱财己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '姜月玟', 'position': '主任医师', 'doctorDescription': '姜月玟己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '孔子诚', 'position': '主任医师', 'doctorDescription': '孔子诚己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['口腔科']}>
+口腔科
+1
+['本院口腔外科执行业务范围从软组织到硬组织有许多不同诊治项目。 诊治项目有一般及困难拔牙、阻生牙与多生牙手术、植牙手术、其他之牙齿与齿槽骨手术、假牙准备前手术、颚颜面外伤、头颈部感染、良性肿瘤、囊肿、口腔黏膜病变、唾液腺疾病等。']
+{'description': ['本院口腔外科执行业务范围从软组织到硬组织有许多不同诊治项目。 诊治项目有一般及困难拔牙、阻生牙与多生牙手术、植牙手术、其他之牙齿与齿槽骨手术、假牙准备前手术、颚颜面外伤、头颈部感染、良性肿瘤、囊肿、口腔黏膜病变、唾液腺疾病等。']}
+[{'doctorName': '周英义', 'position': '医师', 'doctorDescription': '周英义己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '韦鑫佩', 'position': '副主任医师', 'doctorDescription': '韦鑫佩己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['感染科 传染科']}>
+感染科 传染科
+1
+['']
+{'description': ['']}
+[{'doctorName': '卜毓明', 'position': '主任医师', 'doctorDescription': '卜毓明己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '乐亨劭', 'position': '主任医师', 'doctorDescription': '乐亨劭己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '云韦恩', 'position': '医师', 'doctorDescription': '云韦恩己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '平馨瑜', 'position': '医士', 'doctorDescription': '平馨瑜己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['皮肤科']}>
+皮肤科
+1
+['我们的专业皮肤科团队致力于为不同年龄人士及各种皮肤问题的患者提供全面的诊断和治疗。']
+{'description': ['我们的专业皮肤科团队致力于为不同年龄人士及各种皮肤问题的患者提供全面的诊断和治疗。']}
+[{'doctorName': '袁林俐', 'position': '医士', 'doctorDescription': '袁林俐己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '于吉月', 'position': '主治医师', 'doctorDescription': '于吉月己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {}>
+None
+[12/Jun/2022 07:34:47] "POST /department/ HTTP/1.1" 200 1571
+[12/Jun/2022 07:34:47] "GET /static/media/doctor_1.def389160d219cbf5223.png HTTP/1.1" 200 239953
+[12/Jun/2022 08:09:29] "GET / HTTP/1.1" 200 644
+[12/Jun/2022 08:09:29] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[12/Jun/2022 08:09:30] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+Not Found: /favicon.ico
+[12/Jun/2022 08:09:30] "GET /favicon.ico HTTP/1.1" 404 2900
+[12/Jun/2022 08:09:33] "POST /department/ HTTP/1.1" 200 1067
+[12/Jun/2022 08:09:33] "GET /static/media/doctor_1.def389160d219cbf5223.png HTTP/1.1" 200 239953
+[12/Jun/2022 08:21:11] "GET / HTTP/1.1" 200 644
+[12/Jun/2022 08:21:14] "POST /searchdoctor/ HTTP/1.1" 200 122
+[12/Jun/2022 08:42:38] "GET / HTTP/1.1" 200 644
+[12/Jun/2022 08:42:39] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[12/Jun/2022 08:42:40] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+Not Found: /favicon.ico
+[12/Jun/2022 08:42:40] "GET /favicon.ico HTTP/1.1" 404 2900
+[12/Jun/2022 08:42:50] "POST /department/ HTTP/1.1" 200 1571
+[12/Jun/2022 08:42:51] "GET /static/media/doctor_1.def389160d219cbf5223.png HTTP/1.1" 200 239953
+[12/Jun/2022 08:42:54] "POST /department/ HTTP/1.1" 200 1983
+[12/Jun/2022 08:43:07] "POST /searchdoctor/ HTTP/1.1" 200 122
+Internal Server Error: /initDoctor/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 111, in return_doc
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+Internal Server Error: /initComment/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1823, in get_prep_value
+    return int(value)
+ValueError: invalid literal for int() with base 10: 'undefined'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 152, in return_comment_list
+    doc_set = models.DoctorInfo.objects.filter(id=doc_id)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 941, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 961, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 968, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1393, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1412, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1347, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/query.py", line 1193, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 25, in __init__
+    self.rhs = self.get_prep_lookup()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/lookups.py", line 77, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/fields/__init__.py", line 1825, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got 'undefined'.
+[12/Jun/2022 08:43:11] "POST /initDoctor/ HTTP/1.1" 500 123007
+[12/Jun/2022 08:43:11] "POST /initComment/ HTTP/1.1" 500 123285
+[12/Jun/2022 08:43:17] "POST /searchdoctor/ HTTP/1.1" 200 122
+[12/Jun/2022 12:03:06] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[12/Jun/2022 12:03:06] "  /*à     Cookie: mstshash=Administr" 400 -
+[12/Jun/2022 15:24:11] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[12/Jun/2022 15:24:11] "  /*à     Cookie: mstshash=Administr" 400 -
+[12/Jun/2022 15:45:29] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[12/Jun/2022 15:45:29] "  /*à     Cookie: mstshash=Administr" 400 -
+Not Found: /http:/passport.baidu.com/
+[12/Jun/2022 19:23:50] "GET http://passport.baidu.com/ HTTP/1.1" 404 1829
+[12/Jun/2022 19:23:52] code 400, message Bad request syntax ('\x05\x01\x00')
+[12/Jun/2022 19:23:52] " " 400 -
+[12/Jun/2022 19:24:15] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+[12/Jun/2022 19:24:15] " Pg)§ê " 400 -
+[12/Jun/2022 19:24:19] code 400, message Bad request syntax ('\x05\x03\x00\x01\x02')
+[12/Jun/2022 19:24:19] " " 400 -
+[12/Jun/2022 20:43:52] "GET /searchdoctor/ HTTP/1.1" 200 122
+[12/Jun/2022 22:16:59] "GET / HTTP/1.0" 200 644
+[12/Jun/2022 22:19:30] code 400, message Bad request syntax ('\x05\x01\x00')
+[12/Jun/2022 22:19:30] " " 400 -
+[12/Jun/2022 22:20:47] code 400, message Bad request syntax ('\x05\x01\x00')
+[12/Jun/2022 22:20:47] " " 400 -
+[12/Jun/2022 22:21:18] code 400, message Bad request syntax ('\x05\x01\x00')
+[12/Jun/2022 22:21:18] " " 400 -
+[12/Jun/2022 22:31:36] code 400, message Bad request syntax ('\x05\x01\x00')
+[12/Jun/2022 22:31:36] " " 400 -
+Not Found: /http:/passport.baidu.com/
+[13/Jun/2022 00:34:19] "GET http://passport.baidu.com/ HTTP/1.1" 404 1829
+[13/Jun/2022 00:34:52] code 400, message Bad request syntax ('\x05\x01\x00')
+[13/Jun/2022 00:34:52] " " 400 -
+[13/Jun/2022 00:34:54] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+[13/Jun/2022 00:34:54] " Pg)§ê " 400 -
+[13/Jun/2022 05:22:09] "GET / HTTP/1.1" 200 644
+[13/Jun/2022 05:22:09] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[13/Jun/2022 05:22:09] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+Not Found: /favicon.ico
+[13/Jun/2022 05:22:10] "GET /favicon.ico HTTP/1.1" 404 2900
+[13/Jun/2022 07:07:06] code 400, message Bad request syntax ('\x05\x01\x00')
+[13/Jun/2022 07:07:06] " " 400 -
+[13/Jun/2022 07:07:09] code 400, message Bad request syntax ('\x05\x01\x00')
+[13/Jun/2022 07:07:09] " " 400 -
+[13/Jun/2022 09:29:01,663] - Broken pipe from ('185.170.144.46', 64611)
+
+[13/Jun/2022 10:19:29] "GET / HTTP/1.1" 200 644
+Not Found: /favicon.ico
+[13/Jun/2022 10:19:29] "GET /favicon.ico HTTP/1.1" 404 2900
+Not Found: /logo192.png
+[13/Jun/2022 10:19:29] "GET /logo192.png HTTP/1.1" 404 2900
+[13/Jun/2022 10:19:29] "GET / HTTP/1.1" 200 644
+Not Found: /favicon.ico
+[13/Jun/2022 10:19:29] "GET /favicon.ico HTTP/1.1" 404 2900
+Not Found: /logo192.png
+[13/Jun/2022 10:19:29] "GET /logo192.png HTTP/1.1" 404 2900
+Not Found: /favicon.ico
+[13/Jun/2022 10:19:29] "GET /favicon.ico HTTP/1.1" 404 2900
+Not Found: /robots.txt
+[13/Jun/2022 10:19:29] "GET /robots.txt HTTP/1.1" 404 2897
+[13/Jun/2022 10:39:59] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[13/Jun/2022 10:39:59] "  /*à     Cookie: mstshash=Administr" 400 -
+[13/Jun/2022 13:01:19] code 400, message Bad request syntax ('\x05\x01\x00')
+[13/Jun/2022 13:01:19] " " 400 -
+Not Found: /http:/passport.baidu.com/
+[13/Jun/2022 13:01:28] "GET http://passport.baidu.com/ HTTP/1.1" 404 1829
+[13/Jun/2022 13:02:11] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+[13/Jun/2022 13:02:11] " Pg)§ê " 400 -
+[13/Jun/2022 13:33:02] code 400, message Bad HTTP/0.9 request type ('\x03\x00\x00/*à\x00\x00\x00\x00\x00Cookie:')
+[13/Jun/2022 13:33:02] "  /*à     Cookie: mstshash=Administr" 400 -
+Not Found: /favicon.ico
+[13/Jun/2022 14:17:30] "GET /favicon.ico HTTP/1.1" 404 2900
+[13/Jun/2022 15:42:55,766] - Broken pipe from ('89.248.165.21', 54797)
+
+[13/Jun/2022 15:44:23] code 400, message Bad request syntax ('\x03\x00\x00\x13\x0eà\x00\x00\x00\x00\x00\x01\x00\x08\x00\x02\x00\x00\x00')
+[13/Jun/2022 15:44:23] "  à          " 400 -
+[13/Jun/2022 16:07:20,438] - Broken pipe from ('185.170.144.46', 65018)
+
+[13/Jun/2022 20:15:40] code 400, message Bad request syntax ('\x05\x01\x00')
+[13/Jun/2022 20:15:40] " " 400 -
+[13/Jun/2022 20:15:43] code 400, message Bad request syntax ('\x05\x01\x00')
+[13/Jun/2022 20:15:43] " " 400 -
+[13/Jun/2022 20:18:00] code 400, message Bad request syntax ('\x04\x01\x00Pg)§ê\x00')
+[13/Jun/2022 20:18:00] " Pg)§ê " 400 -
+Not Found: /http:/passport.baidu.com/
+[13/Jun/2022 20:18:01] "GET http://passport.baidu.com/ HTTP/1.1" 404 1829
+[13/Jun/2022 20:18:35] code 400, message Bad request syntax ('\x05\x01\x00')
+[13/Jun/2022 20:18:35] " " 400 -
+[13/Jun/2022 20:47:24] "GET / HTTP/1.1" 200 644
+Not Found: /robots.txt
+[14/Jun/2022 00:29:40] "GET /robots.txt HTTP/1.1" 404 2892
+[14/Jun/2022 00:29:47] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py changed, reloading.
+<QueryDict: {'name': ['儿科']}>
+儿科
+1
+['儿科部是本港其中一个主要的儿科部门，为中九龙地区提供二十四小时服务。旨在由专业医疗及技术人员带领下，以“儿童为本”的理念，为有需要的儿童及其家庭提供高质素及全面的儿科服务。']
+{'description': ['儿科部是本港其中一个主要的儿科部门，为中九龙地区提供二十四小时服务。旨在由专业医疗及技术人员带领下，以“儿童为本”的理念，为有需要的儿童及其家庭提供高质素及全面的儿科服务。']}
+[{'doctorName': '倪财霞', 'position': '医士', 'doctorDescription': '倪财霞己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '贺儒盛', 'position': '主任医师', 'doctorDescription': '贺儒盛己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '谢汉伯', 'position': '副主任医师', 'doctorDescription': '谢汉伯己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['产科']}>
+产科
+1
+['']
+{'description': ['']}
+[{'doctorName': '许仰天', 'position': '主任医师', 'doctorDescription': '许仰天己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '于丰光', 'position': '主治医师', 'doctorDescription': '于丰光己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '卜俞筠', 'position': '副主任医师', 'doctorDescription': '卜俞筠己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['儿科']}>
+儿科
+1
+['儿科部是本港其中一个主要的儿科部门，为中九龙地区提供二十四小时服务。旨在由专业医疗及技术人员带领下，以“儿童为本”的理念，为有需要的儿童及其家庭提供高质素及全面的儿科服务。']
+{'description': ['儿科部是本港其中一个主要的儿科部门，为中九龙地区提供二十四小时服务。旨在由专业医疗及技术人员带领下，以“儿童为本”的理念，为有需要的儿童及其家庭提供高质素及全面的儿科服务。']}
+[{'doctorName': '倪财霞', 'position': '医士', 'doctorDescription': '倪财霞己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '贺儒盛', 'position': '主任医师', 'doctorDescription': '贺儒盛己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '谢汉伯', 'position': '副主任医师', 'doctorDescription': '谢汉伯己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+<QueryDict: {'name': ['骨科']}>
+骨科
+1
+['骨科中心坐落于中半山嘉诺撒医院，由邱明才教授于1980年成立。本中心提供全面骨科服务，由急症以至预约诊症。我们的愿景是为大众提供全面及高质素骨科治疗。骨科是独立成科的医学专业，当中包括创伤、运动医学、关节置换、脊椎外科、手外科、足踝外科、小儿骨科、肿瘤骨科、复康科。骨科中心的骨科专科医生提供全面治疗为病人作出适当的诊治。']
+{'description': ['骨科中心坐落于中半山嘉诺撒医院，由邱明才教授于1980年成立。本中心提供全面骨科服务，由急症以至预约诊症。我们的愿景是为大众提供全面及高质素骨科治疗。骨科是独立成科的医学专业，当中包括创伤、运动医学、关节置换、脊椎外科、手外科、足踝外科、小儿骨科、肿瘤骨科、复康科。骨科中心的骨科专科医生提供全面治疗为病人作出适当的诊治。']}
+[{'doctorName': '葛卉月', 'position': '医师', 'doctorDescription': '葛卉月己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '秦豪亨', 'position': '医师', 'doctorDescription': '秦豪亨己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}, {'doctorName': '孙上怡', 'position': '主治医师', 'doctorDescription': '孙上怡己任职多年，有着丰富的经验，曾多次获得国内外多项奖项，广受患者好评'}]
+Watching for file changes with StatReloader
+[14/Jun/2022 07:33:25] "GET / HTTP/1.1" 200 644
+[14/Jun/2022 07:33:25] "GET /static/css/main.9fc8d8b4.css HTTP/1.1" 200 558211
+[14/Jun/2022 07:33:26] "GET /static/js/main.8c258a47.js HTTP/1.1" 200 930947
+Not Found: /favicon.ico
+[14/Jun/2022 07:33:27] "GET /favicon.ico HTTP/1.1" 404 2900
+[14/Jun/2022 07:33:29] "GET /static/media/doctor_1.def389160d219cbf5223.png HTTP/1.1" 200 239953
+Internal Server Error: /department/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 90, in get_department
+    update_data()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 27, in update_data
+    sql = "select real_name from user where user_id = " + doc[0] + ";"
+TypeError: can only concatenate str (not "int") to str
+[14/Jun/2022 07:33:29] "POST /department/ HTTP/1.1" 500 68765
+Internal Server Error: /department/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 90, in get_department
+    update_data()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 27, in update_data
+    sql = "select real_name from user where user_id = " + doc[0] + ";"
+TypeError: can only concatenate str (not "int") to str
+[14/Jun/2022 07:33:55] "POST /department/ HTTP/1.1" 500 68765
+Internal Server Error: /department/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 90, in get_department
+    update_data()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 27, in update_data
+    sql = "select real_name from user where user_id = " + doc[0] + ";"
+TypeError: can only concatenate str (not "int") to str
+[14/Jun/2022 07:34:01] "POST /department/ HTTP/1.1" 500 68765
+Internal Server Error: /searchdoctor/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 159, in find_doc
+    update_data()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 27, in update_data
+    sql = "select real_name from user where user_id = " + doc[0] + ";"
+TypeError: can only concatenate str (not "int") to str
+[14/Jun/2022 07:34:09] "POST /searchdoctor/ HTTP/1.1" 500 68658
+Internal Server Error: /initDoctor/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 136, in return_doc
+    update_data()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 27, in update_data
+    sql = "select real_name from user where user_id = " + doc[0] + ";"
+TypeError: can only concatenate str (not "int") to str
+[14/Jun/2022 07:34:11] "POST /initDoctor/ HTTP/1.1" 500 68615
+Internal Server Error: /initComment/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'user_name' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 186, in return_comment_list
+    new_user.save()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/base.py", line 763, in save_base
+    updated = self._save_table(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/base.py", line 906, in _do_insert
+    return manager._insert(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'user_name' cannot be null")
+[14/Jun/2022 07:34:11] "POST /initComment/ HTTP/1.1" 500 212241
+Internal Server Error: /department/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 90, in get_department
+    update_data()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 27, in update_data
+    sql = "select real_name from user where user_id = " + doc[0] + ";"
+TypeError: can only concatenate str (not "int") to str
+[14/Jun/2022 07:34:23] "POST /department/ HTTP/1.1" 500 68765
+Internal Server Error: /department/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 90, in get_department
+    update_data()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 27, in update_data
+    sql = "select real_name from user where user_id = " + doc[0] + ";"
+TypeError: can only concatenate str (not "int") to str
+[14/Jun/2022 07:34:29] "POST /department/ HTTP/1.1" 500 68765
+Internal Server Error: /searchdoctor/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 159, in find_doc
+    update_data()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 27, in update_data
+    sql = "select real_name from user where user_id = " + doc[0] + ";"
+TypeError: can only concatenate str (not "int") to str
+[14/Jun/2022 07:35:41] "POST /searchdoctor/ HTTP/1.1" 500 68658
+Internal Server Error: /initDoctor/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 136, in return_doc
+    update_data()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 27, in update_data
+    sql = "select real_name from user where user_id = " + doc[0] + ";"
+TypeError: can only concatenate str (not "int") to str
+[14/Jun/2022 07:35:42] "POST /initDoctor/ HTTP/1.1" 500 68615
+Internal Server Error: /initComment/
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.IntegrityError: (1048, "Column 'user_name' cannot be null")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/views/decorators/csrf.py", line 54, in wrapped_view
+    return view_func(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/backend/views.py", line 186, in return_comment_list
+    new_user.save()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/base.py", line 726, in save
+    self.save_base(using=using, force_insert=force_insert,
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/base.py", line 763, in save_base
+    updated = self._save_table(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/base.py", line 868, in _save_table
+    results = self._do_insert(cls._base_manager, using, fields, returning_fields, raw)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/base.py", line 906, in _do_insert
+    return manager._insert(
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/query.py", line 1270, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/models/sql/compiler.py", line 1416, in execute_sql
+    cursor.execute(sql, params)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 98, in execute
+    return super().execute(sql, params)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 66, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 75, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/utils.py", line 84, in _execute
+    return self.cursor.execute(sql, params)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/django/db/backends/mysql/base.py", line 73, in execute
+    return self.cursor.execute(query, args)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/cursors.py", line 148, in execute
+    result = self._query(query)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/cursors.py", line 310, in _query
+    conn.query(q)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 548, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 775, in _read_query_result
+    result.read()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 1156, in read
+    first_packet = self.connection._read_packet()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/connections.py", line 725, in _read_packet
+    packet.raise_for_error()
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/protocol.py", line 221, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/www/wwwroot/review/Doctor-Review-backend/backend/1c67665285fb6a7d761414e12578e574_venv/lib/python3.9/site-packages/pymysql/err.py", line 143, in raise_mysql_exception
+    raise errorclass(errno, errval)
+django.db.utils.IntegrityError: (1048, "Column 'user_name' cannot be null")
+[14/Jun/2022 07:35:42] "POST /initComment/ HTTP/1.1" 500 212241
