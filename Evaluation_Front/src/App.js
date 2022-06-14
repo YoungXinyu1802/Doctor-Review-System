@@ -1,6 +1,6 @@
-import './App.css';
-import React from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css'
+import './App.css'
+import React from 'react'
 
 import {Route,  Routes} from 'react-router-dom';
 
@@ -13,7 +13,7 @@ function App() {
     return (
         <div>
             <Routes>
-                <Route path="/" element={<HomePage />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/homepage" element={<HomePage />} />
                 <Route path="/department" element={<Department />} />
                 <Route path="/doctorHome" element={<DoctorHome />} />

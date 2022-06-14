@@ -1,5 +1,5 @@
 import React from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css'
 import '../CSS/Casousel.css';
 import {Card, Carousel} from 'antd';
 import Cat from '../assets/Cat.jpg'

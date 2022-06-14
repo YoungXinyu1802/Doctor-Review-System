@@ -1,13 +1,9 @@
-import { Link } from "react-router-dom";
+import {Link, Navigate} from "react-router-dom";
+import React from "react";
 
 const Home = () => {
     return(
-        <div>
-            <h1> Welcome to the app! </h1>
-            <nav>
-                <Link to="/department">Department</Link>
-            </nav>
-        </div>
+        <Navigate push to="/homepage" />
     );
 }
 export default Home

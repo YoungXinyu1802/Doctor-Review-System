@@ -18,14 +18,15 @@ import './DocterHome.css'
 import Layout, {Header} from "antd/es/layout/layout";
 import {ArrowLeftOutlined} from "@ant-design/icons";
 
-import Lu from "../../assets/Lu.jpg";import { DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled } from '@ant-design/icons';
+import Lu from "../../assets/Lu.jpg";
+import { DislikeOutlined, LikeOutlined, DislikeFilled, LikeFilled } from '@ant-design/icons';
 import Avatar from "antd/es/avatar/avatar";
 import TextArea from "antd/es/input/TextArea";
 import {doctorList} from "../../MockData/cardData";
 import VirtualList from 'rc-virtual-list';
 import * as PropTypes from "prop-types";
 import Demo from '../../Components/textArea'
-import {useSearchParams} from "react-router-dom";
+import {Navigate, useSearchParams} from "react-router-dom";
 import { toHaveTextContent } from "@testing-library/jest-dom/dist/matchers";
 
 
@@ -94,6 +95,7 @@ InfiniteScroll.propTypes = {
 class DoctorHome extends Component {
 
     state = {
+        redirect:false,
         TextValue:"",
         doctorData:{
             name:"李胜银",
@@ -214,6 +216,11 @@ class DoctorHome extends Component {
         console.log(a)
         this.update(id,t_like,t_dislike,2)
     };
+    goHome(){
+        this.setState({
+            redirect:true
+        })
+    }
 
 
     //提前加载信息
@@ -283,12 +290,15 @@ class DoctorHome extends Component {
     }
 
     render() {
+        if (this.state.redirect) {
+            return <Navigate push to="/" />;
+        }
         return (
             <Layout className="layout" style={{height: "10px"}}>
                 <Header style={{backgroundColor: '#007bff'}}>
                     <Breadcrumb style={{margin: '16px 0'}} className="breadCrumb">
                         <ArrowLeftOutlined
-                            onClick={() => window.history.back()}
+                            onClick={() => window.history.back() }
                             style={ArrowStyle}/>
                         <div style={{width: '10px'}}/>
                         <Title level={4} style={titleStyle}>医生主页</Title>

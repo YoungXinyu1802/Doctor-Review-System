@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css'
 import '../CSS/textArea.css';
 import {Comment, Avatar, Form, Button, List, Input, Rate} from 'antd';
 import moment from 'moment';

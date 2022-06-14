@@ -1,5 +1,5 @@
 import React from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css'
 import '../CSS/PanelList.css';
 import { List, Typography, Divider } from 'antd';
 

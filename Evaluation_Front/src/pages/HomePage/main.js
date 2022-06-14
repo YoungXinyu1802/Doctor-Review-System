@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css'
 import './main.css';
 import {Card,Layout, Menu, Breadcrumb, Dropdown, Col, Row, Avatar, Button, Drawer, Space, List} from 'antd';
 import { UserOutlined } from '@ant-design/icons';
@@ -58,35 +58,7 @@ const onSearch = value => console.log(value);
 
 class HomePage extends Component {
     constructor(props) {
-        super(props);
-        const token = getToken()
-        if (token) {
-            const url="http://124.220.171.17:3000/api/oauth/verify"
-            let formData=new FormData()
-            formData.append("token",token)
-            axios.get(url, {
-                params: {
-                    token: token
-                }
-            }).then( function (res){
-                if( res.data.code != 0) {
-                    console.log("The token is false")
-                }else{
-                    window.localStorage.setItem('userName', res.data.data.userName)
-                    console.log("The token is true")
-                }
-            }).catch(function (error){
-                console.log(error)
-            })
-        }else{
-            const oldLocation = window.location
-            var url = 'http://124.220.171.17:3000/login?redir='
-            const nowUrl = oldLocation.toString().slice(7)
-            //const nowUrl = 'baidu.com'
-            console.log(nowUrl)
-            url = url + encodeURIComponent(nowUrl)
-            window.location.href = url
-        }
+        super(props)
         // this.searchDoctor=this.searchDoctor.bind(this)
     }
 
@@ -94,14 +66,7 @@ class HomePage extends Component {
         redirect:false,
         id:1,
         Visible:false,
-        searchRes:[{
-            "name":"韩钊",
-            "id":1,
-            "title":"主治医师",
-            "post":"浙大七院 脊柱外科",
-            "score":"4.9",
-            "detail":"从事专科十年，擅长创伤，颈肩痛及腰腿痛的诊治，希望大家在提问的时候能够说明职业，疼痛的位置，有影像学资料更有助于判断病情"
-        }] //搜索结果list
+        searchRes:[]
     }
 
     showDrawer(e) {
@@ -168,7 +133,6 @@ class HomePage extends Component {
         this.setState({
             redirect:true
         })
-
     }
 
     render() {
@@ -198,7 +162,7 @@ class HomePage extends Component {
                             <div style={style}/>
                         </Col>
                         <Col className="gutter-row" span={2}>
-                            
+
                         </Col>
                     </Row>
 

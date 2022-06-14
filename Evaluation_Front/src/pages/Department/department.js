@@ -1,5 +1,5 @@
 import React from 'react';
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.min.css'
 import './department.css';
 import { PageHeader } from 'antd';
 import { Typography, Divider } from 'antd';
@@ -40,24 +40,28 @@ const Department = () => {
         ],
         doctor : [
             {
+                id : 1,
                 doctorName : "李明",
                 position : "主任医师 教授",
                 doctorDescription : "以肝脏移植和肝胆胰脾肿瘤为专业特长",
                 image : Pic1
             },
             {
+                id : 2,
                 doctorName : "樊华",
                 position : "主任医师 副教授",
                 doctorDescription : "擅长肝脏/胆囊和胆管/胰腺/脾脏系统",
                 image : Pic2
             },
             {
+                id : 3,
                 doctorName : "郎韧",
                 position : "副主任医师 副教授",
                 doctorDescription : "肝胆胰恶性肿瘤手术综合治疗,肝胆胰脾疾病腹腔镜微创手术",
                 image : Pic3
             },
             {
+                id : 4,
                 doctorName : "赵昕",
                 position : "副主任医师 讲师",
                 doctorDescription : "肝移植;胰腺癌手术治疗;肝脏良恶性肿瘤的微创治疗",
@@ -125,6 +129,10 @@ const Department = () => {
         console.log(params.id)
         navigate("/", { replace: true });
     }
+    async function goDoctorPage(id) {
+        localStorage.setItem("ID",id)
+        navigate("/doctorhome", { replace: true })
+    }
     return (
         <Layout className="layout">
             <div className="site-page-header-ghost-wrapper">
@@ -161,6 +169,7 @@ const Department = () => {
                                                     <Card
                                                         hoverable
                                                         cover={<img alt="doctor" src={Pic1} height={'280px'}/>}
+                                                        onClick={ ()=>goDoctorPage(item.id) }
                                                     >
                                                         <Meta title={item.doctorName+" "+item.position}  description={item.doctorDescription} />
                                                     </Card>
