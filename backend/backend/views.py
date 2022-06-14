@@ -52,7 +52,8 @@ def ok(data: object):
 
 
 def err(data: object):
-    return JsonResponse({'code': 1, 'message': '操作失败', 'data': None})
+    data=None
+    return JsonResponse({'code': 1, 'message': '操作失败', 'data': data})
 
 
 # 获取医生信息
@@ -192,7 +193,7 @@ def return_comment_list(request):
     doc_set = models.DoctorInfo.objects.filter(id=doc_id)
     comment_list = []
     if doc_set.exists():
-        comment_data = models.Comment.objects.filter(doc=doc_set[0]).order_by("likes")
+        comment_data = models.Comment.objects.filter(doc=doc_set[0]).order_by("-likes")
         for c in comment_data:
             update_approval(c.id)
             comment_list.append({
@@ -209,11 +210,11 @@ def return_comment_list(request):
 
 
 @csrf_exempt
-def return_comment_list_2(doc_id, user_id):
+def return_comment_list_2(user_id, doc_id):
     doc_set = models.DoctorInfo.objects.filter(id=doc_id)
     comment_list = []
     if doc_set.exists():
-        comment_data = models.Comment.objects.filter(doc=doc_set[0]).order_by("likes")
+        comment_data = models.Comment.objects.filter(doc=doc_set[0]).order_by("-likes")
         for c in comment_data:
             update_approval(c.id)
             comment_list.append({
@@ -336,4 +337,4 @@ def create_approval(request):
     approval_set = models.Approval.objects.filter(user=User.objects.get(id=_user),
                                                   comment=Comment.objects.get(id=_comment))
     print("approval_set[0].approval "+str(approval_set[0].approval))
-    return return_comment_list_2(comment[0].doc.id)
+    return return_comment_list_2(_user, comment[0].doc.id)

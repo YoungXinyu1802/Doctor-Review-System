@@ -198,7 +198,7 @@ class HomePage extends Component {
                             <div style={style}/>
                         </Col>
                         <Col className="gutter-row" span={2}>
-                            <div style={style}/>
+                            
                         </Col>
                     </Row>
 
