@@ -52,7 +52,7 @@ def ok(data: object):
 
 
 def err(data: object):
-    data=None
+    # data=None
     return JsonResponse({'code': 1, 'message': '操作失败', 'data': data})
 
 
