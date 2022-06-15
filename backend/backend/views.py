@@ -109,7 +109,7 @@ def get_department(request):
             "doctorName": d.doctor_name,
             "position": d.position,
             "doctorDescription": d.description
-            # "score": d.score,
+            "score": d.score,
 
             # "post": d.department.department_name
         })
