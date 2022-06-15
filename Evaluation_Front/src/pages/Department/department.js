@@ -14,6 +14,7 @@ import Pic1 from '../../assets/doctor_1.png'
 import Pic2 from '../../assets/doctor_2.png';
 import Pic3 from '../../assets/doctor_3.png';
 import Pic4 from '../../assets/doctor_4.png';
+import {verifyToken} from "../../utils/token";
 
 
 const { Content, Footer } = Layout;
@@ -110,6 +111,7 @@ const Department = () => {
     )
 
     useEffect(()=>{
+        verifyToken()
         setDepartmentName(localStorage.getItem("department"))
         console.log( localStorage.getItem("department") )
         var formData = new FormData();

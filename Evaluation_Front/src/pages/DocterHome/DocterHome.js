@@ -28,6 +28,7 @@ import * as PropTypes from "prop-types";
 import Demo from '../../Components/textArea'
 import {Navigate, useSearchParams} from "react-router-dom";
 import { toHaveTextContent } from "@testing-library/jest-dom/dist/matchers";
+import {verifyToken} from "../../utils/token";
 
 
 
@@ -227,6 +228,7 @@ class DoctorHome extends Component {
     constructor(props){
         super(props); // 声明constructor时必须调用super方法
         console.log(this.props); // 可以正常访问this.props
+        verifyToken()
         let id=localStorage.getItem("ID")
         console.log("yy",id)
         var that=this

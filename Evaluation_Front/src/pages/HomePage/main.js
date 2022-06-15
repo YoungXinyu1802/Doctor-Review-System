@@ -8,11 +8,12 @@ import SearchBar from '../../Components/search'
 import Show from '../../Components/Card'
 import { Typography, Switch } from 'antd';
 import Search from "antd/es/input/Search";
-import { useNavigate } from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
 import {doctorList,doctorList1} from '../../MockData/cardData'
 import { Navigate } from 'react-router-dom';
 import {getToken} from "../../utils";
 import axios from "axios";
+import {verifyToken} from "../../utils/token";
 
 
 
@@ -56,9 +57,11 @@ const menu = (
 const onSearch = value => console.log(value);
 
 
+
 class HomePage extends Component {
     constructor(props) {
         super(props)
+        verifyToken()
         // this.searchDoctor=this.searchDoctor.bind(this)
     }
 
