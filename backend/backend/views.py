@@ -264,7 +264,7 @@ def create_comment(request):
     if check_is_commented(_user, _doc) == 1:
         new_comment = models.Comment(user=User.objects.get(id=_user), doc=DoctorInfo.objects.get(id=_doc), score=_score, content=_content)
         new_comment.save()
-        update_score(_user)
+        update_score(_doc)
         return return_comment_list_2(_user, _doc)
     else:
         new_comment = models.Comment(user=User.objects.get(id=_user), doc=DoctorInfo.objects.get(id=_doc), score=_score, content=_content)
