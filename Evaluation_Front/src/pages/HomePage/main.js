@@ -109,12 +109,13 @@ class HomePage extends Component {
                     //对data进行操作
                     if (data.code===1){
                         that.setState({
-                            doctorData:[]
+                            searchRes:[]
                         });
                     }
                     else {
+
                          that.setState({
-                             doctorData:data.data
+                             searchRes:data.data
                         });
                     }
                   //更新searchRes
