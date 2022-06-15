@@ -18,8 +18,7 @@ const removeToken = () => {
     return window.localStorage.removeItem(key)
 }
 
-const verifyToken = () => {
-    var goLogin = true
+async function verifyToken() {
     //
     const qs =require('qs')
     console.log( window.location.href )
@@ -29,40 +28,48 @@ const verifyToken = () => {
         setToken( searchParams.token )
         window.localStorage.setItem('userName', searchParams.userName )
         window.localStorage.setItem('userId', searchParams.userId)
-        goLogin = false
+        //
+        const token = getToken()
+        console.log("TOKEN==" + token)
+        var res = await axios.get("http://124.220.171.17:3000/api/oauth/verify",{
+            headers : {'token':token}
+        })
+        console.log("[RES]")
+        console.log(res)
+        if( res.data.code != 0) {
+            console.log("The token is false")
+            console.log("[REDIRECT] : GO LOGIN")
+        }else{
+            console.log("The token is true")
+            window.localStorage.setItem('userName', res.data.data.userName)
+            window.localStorage.setItem('userId', res.data.data.userId)
+            setToken(token)
+        }
+        //
+    }else{
+        const token = getToken()
+        console.log("TOKEN==" + token)
+        var res = await axios.get("http://124.220.171.17:3000/api/oauth/verify",{
+                headers : {'token':token}
+            })
+        console.log("[RES]")
+        console.log(res)
+        if( res.data.code != 0) {
+            console.log("The token is false")
+            console.log("[REDIRECT] : GO LOGIN")
+            const oldLocation = window.location
+            var url = 'http://124.220.171.17:3000/login?redir='
+            const nowUrl = oldLocation.toString().slice(7)
+            url = url + encodeURIComponent(nowUrl)
+            window.location.href = url
+        }else{
+            console.log("The token is true")
+            window.localStorage.setItem('userName', res.data.data.userName)
+            window.localStorage.setItem('userId', res.data.data.userId)
+            setToken(token)
+        }
     }
     //
-    const token = getToken()
-    if( token ){
-            const url="http://124.220.171.17:3000/api/oauth/verify"
-            console.log(url)
-            axios.get(url,{
-                headers : {'token':token}
-                }
-            ).then( function (res){
-                console.log(res)
-                if( res.data.code != 0) {
-                    console.log("The token is false")
-                }else{
-                    console.log("The token is true")
-                    window.localStorage.setItem('userName', res.data.data.userName)
-                    window.localStorage.setItem('userId', res.data.data.userId)
-                    setToken(token)
-                    goLogin = false
-                }
-            }).catch(function (error){
-                console.log(error)
-            })
-    }
-    if( goLogin == true ){
-        console.log("Hello World")
-        console.log("[REDIRECT] : GO LOGIN")
-        const oldLocation = window.location
-        var url = 'http://124.220.171.17:3000/login?redir='
-        const nowUrl = oldLocation.toString().slice(7)
-        url = url + encodeURIComponent(nowUrl)
-        window.location.href = url
-    }
 }
 
 export {

@@ -16,9 +16,6 @@ const imgStyle={
 
 const { Paragraph,Title } = Typography;
 
-const testCardClick  = (e) =>{
-    console.log(e.target.className)
-}
 
 const CardList = () => {
     const [ellipsis, setEllipsis] = React.useState(true);

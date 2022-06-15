@@ -227,7 +227,7 @@ class DoctorHome extends Component {
     //提前加载信息
     constructor(props){
         super(props); // 声明constructor时必须调用super方法
-        console.log(this.props); // 可以正常访问this.props
+        //console.log(this.props); // 可以正常访问this.props
         verifyToken()
         let id=localStorage.getItem("ID")
         console.log("yy",id)
