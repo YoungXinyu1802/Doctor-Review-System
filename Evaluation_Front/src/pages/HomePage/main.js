@@ -27,7 +27,8 @@ const titleStyle={
     strong: 'true',
 }
 const searchStyle={
-    size:'20%'
+    width:'calc(200%)',
+    marginLeft:'10%'
 }
 const cardStyle={
     marginTop:'10px'
@@ -201,9 +202,11 @@ class HomePage extends Component {
                     <div className="blank">
                     </div>
                     <div className="search">
-                        <Space direction="vertical">
-                            <Search placeholder="请输入医生姓名" onSearch={(e)=>this.searchDoctor(e)} enterButton  size={"large"}
-                                    style={{width:"200%"}}  />
+                        <Space direction="vertical" align={"center"}>
+                            <Search
+                                    placeholder="请输入医生姓名" onSearch={(e)=>this.searchDoctor(e)} enterButton  size={"large"}
+                                    style={{ width: '200%' }}
+                            />
                         </Space>
                     </div>
                     <Tags/>
