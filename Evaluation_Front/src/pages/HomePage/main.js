@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import 'antd/dist/antd.min.css'
 import './main.css';
-import {Card,Layout, Menu, Breadcrumb, Dropdown, Col, Row, Avatar, Button, Drawer, Space, List} from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import {Card, Layout, Menu, Breadcrumb, Dropdown, Col, Row, Avatar, Button, Drawer, Space, List, message} from 'antd';
+import {ArrowLeftOutlined, UserOutlined} from '@ant-design/icons';
 import Tags from "../../Components/Panel";
 import SearchBar from '../../Components/search'
 import Show from '../../Components/Card'
@@ -32,6 +32,13 @@ const searchStyle={
 const cardStyle={
     marginTop:'10px'
 }
+
+const ArrowStyle={
+    color: 'rgb(255,255,255)',
+    strong: 'true',
+    fontSize:'20px',
+    margin:'5px'
+}
 const style = { background: '#007bff' };
 const menu = (
     <Menu
@@ -56,6 +63,14 @@ const menu = (
 );
 const onSearch = value => console.log(value);
 
+message.config({
+    top: 10,
+    duration: 2,
+    maxCount: 3,
+    rtl: true,
+    prefixCls: 'ant-message',
+    getContainer : () => document.body
+});
 
 
 class HomePage extends Component {
@@ -91,6 +106,14 @@ class HomePage extends Component {
     //需要完成至少两个函数
 
     searchDoctor(e){
+        if (!e || e.length==0){
+            message.error("医生名字不能为空")
+            return
+        }
+        if( e.length>10 ){
+            message.error("医生名字不能超过10个字符")
+            return
+        }
         console.log("get in")
         var that=this
         var formData=new FormData();
@@ -150,6 +173,9 @@ class HomePage extends Component {
                         <Col className="gutter-row" span={8}>
                             <div style={style}>
                                 <Breadcrumb style={{margin: '16px 0'}} className="breadCrumb">
+                                    <ArrowLeftOutlined
+                                        onClick={() => window.location.replace('http://124.220.171.17:3000/') }
+                                        style={ArrowStyle}/>
                                     <Title level={4} style={titleStyle}>浙大七院医生评价系统</Title>
                                     <Row gutter={16}>
                                     </Row>

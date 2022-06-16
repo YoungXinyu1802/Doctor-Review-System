@@ -71,7 +71,7 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
         </Form.Item>
         <Form.Item>
             <Button htmlType="submit" loading={submitting} onClick={onSubmit} type="primary">
-                Add Comment
+                评论
             </Button>
         </Form.Item>
     </>
@@ -372,14 +372,6 @@ class DoctorHome extends Component {
                     <div className="interval"/>
                     <Card  className="TextArea">
                         <div className="interval"/>
-                        {/*<Form.Item>*/}
-                        {/*    <TextArea rows={4} showCount onChange={this.onChange}  />*/}
-                        {/*</Form.Item>*/}
-                        {/*<Form.Item>*/}
-                        {/*    <Button htmlType="submit" loading={false} onClick={(e)=>this.onSubmit(e)} type="primary">*/}
-                        {/*        提交评价*/}
-                        {/*    </Button>*/}
-                        {/*</Form.Item>*/}
                         <Demo name={this.state.doctorData.id} />
                     </Card>
 

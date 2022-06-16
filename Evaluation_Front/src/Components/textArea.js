@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
 import 'antd/dist/antd.min.css'
 import '../CSS/textArea.css';
-import {Comment, Avatar, Form, Button, List, Input, Rate} from 'antd';
+import {Comment, Avatar, Form, Button, List, Input, Rate, message} from 'antd';
 import moment from 'moment';
 const { TextArea } = Input;
 
-
+message.config({
+    top: 400,
+    duration: 2,
+    maxCount: 3,
+    rtl: true,
+    prefixCls: 'ant-message',
+    getContainer : () => document.body
+});
 
 const Editor = ({ onChange, onSubmit, submitting, value }) => (
     <>
@@ -14,7 +21,7 @@ const Editor = ({ onChange, onSubmit, submitting, value }) => (
         </Form.Item>
         <Form.Item>
             <Button htmlType="submit" loading={submitting} onClick={onSubmit} type="primary">
-                Add Comment
+                评论
             </Button>
         </Form.Item>
     </>
@@ -27,7 +34,14 @@ const App = (id) => {
     const [rateValue, setRateValue] = useState(5);
 
     const handleSubmit = () => {
-        if (!value) return;
+        if (!value){
+            message.error("评论不能为空")
+            return
+        }
+        if( value.length>1000 ){
+            message.error("评论不能超过1000个字符")
+            return
+        }
         console.log(value)
         setSubmitting(true);
         setTimeout(() => {
@@ -58,7 +72,6 @@ const App = (id) => {
         }, function(e){
             console.log('上传Comments请求失败');
         })
-        //window.location.reload()
     };
 
     const handleChange = (e) => {
@@ -73,7 +86,7 @@ const App = (id) => {
     return (
         <>
             <div className="Rate" >
-                <Rate allowHalf defaultValue={5} count={10} onChange={(rateValue)=>changeValue(rateValue)}/>
+                <Rate allowHalf defaultValue={2} count={5} onChange={(rateValue)=>changeValue(rateValue)}/>
             </div>
             <Comment
                 avatar={<Avatar src="https://joeschmoe.io/api/v1/random" alt="Han Solo" />}

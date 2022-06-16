@@ -9,12 +9,15 @@ import { useNavigate, useParams} from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { useStore } from "../../store";
 import { http } from "../../utils"
+import '../../CSS/Card.css'
 
 import Pic1 from '../../assets/doctor_1.png'
 import Pic2 from '../../assets/doctor_2.png';
 import Pic3 from '../../assets/doctor_3.png';
 import Pic4 from '../../assets/doctor_4.png';
 import {verifyToken} from "../../utils/token";
+import {StarFilled} from "@ant-design/icons";
+import {doctorList} from "../../MockData/cardData";
 
 
 const { Content, Footer } = Layout;
@@ -27,11 +30,18 @@ const content1 = '  浙大七院肝胆胰脾外科组建于2004年12月，其前
 const content2 = '  浙大七院肝胆胰脾外科现有医生20人，其中教授2人、副教授6人，主任医师5人，副主任医师7人，其中博士研究生导师2人、硕士研究生导师4人。科室所有医生均为研究生以上学历，70%为博士。全科现有护士17人，主管护师1人，70%为本科学历。科室专家承担国家二级学术分会主委和副主委各一项，常委五项，委员11项，国家三级专业协会常委一项，委员15项。其中，中华医学会各学会委员三项。专家们在国内外20多个杂志担任编委和通讯编委工作，科室获得各级课题30多项，总课题经费达千万左右。\n'
 const content3 = '  我们科室为杭州市重点学科、国家教委博士点学科，也是杭州市肝脏移植中心，每年完成肝脏移植100-150例次，累计完成1500多例次，目前仍存活。在我们中心成功完成杭州市年龄最大的移植受体手术达到80岁。危重症肝病肝移植围手术期存活率达到国际较先进水平，我们在移植术后根据基因表达和细胞状态精准调节免疫药物管理，实时监测免疫状态评分和其它指标，使我们中心术后个体化的免疫药物调节达到国际较领先水平，长期存活的移植患者生活质量极高。\n'
 
+const imgStyle={
+    width:'80px',
+    height:'80px',
+    float:'auto',
+}
+
 const Department = () => {
     const navigate = useNavigate()
     const params = useParams()
     const { departmentStore } = useStore()
     const [ departmentName, setDepartmentName ] = useState("肝胆外科")
+    const [ellipsis, setEllipsis] = useState(true)
     const [ dep_info, setDep_info ] = useState(
         [
             content1,
@@ -129,18 +139,36 @@ const Department = () => {
                         <Title level={2}>医生介绍</Title>
                         <Paragraph>
                             <div className="site-card-wrapper">
-                                <Row gutter={56}>
+                                <Row gutter={24}>
                                     {
                                         doctor_info.map( (item,index)=>{
                                             return(
-                                                <Col key={index} span={6}>
+                                                <Col key={index} span={4}>
                                                     <Card
                                                         hoverable
-                                                        cover={<img alt="doctor" src={Pic1} height={'280px'}/>}
+                                                        className="card1"
                                                         onClick={ ()=>goDoctorPage(item.id) }
                                                     >
-                                                        <Meta title={item.doctorName+" "+item.position}  description={item.doctorDescription} />
+                                                        <img src={imageList[index]} style={imgStyle} className='image'/>
+                                                        <Title level={5}>{item.doctorName} {item.position}</Title>
+                                                        {/*<div className="text1">{doctorList[index].post}</div>*/}
+                                                        <div className="text1" >
+                                                            <StarFilled style={{color:"#fff207"}}/>  {5.0}
+                                                        </div>
+                                                        <Paragraph ellipsis={
+                                                             { rows : 3}
+                                                            }  className="text1">
+                                                            {item.doctorDescription}
+                                                        </Paragraph>
                                                     </Card>
+                                                    {/*<Card*/}
+                                                    {/*    hoverable*/}
+                                                    {/*    cover={<img alt="doctor" src={imageList[index]} height={'280px'}/>}*/}
+                                                    {/*    onClick={ ()=>goDoctorPage(item.id) }*/}
+                                                    {/*>*/}
+                                                    {/*    <Meta title={item.doctorName+" "+item.position}  description={item.doctorDescription}  />*/}
+                                                    {/*    <StarFilled style={{color:"#fff207"}}/>  {5.0}*/}
+                                                    {/*</Card>*/}
                                                 </Col>
                                             )
                                         } )

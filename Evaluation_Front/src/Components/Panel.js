@@ -114,7 +114,6 @@ class Tags extends Component{
                             )
                         })
                     }
-
                 </div>
             </Card>
         );
