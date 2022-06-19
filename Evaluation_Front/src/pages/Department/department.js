@@ -181,7 +181,7 @@ const Department = () => {
                     </Typography>
                 </div>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>浙大第七医院</Footer>
+         
         </Layout>
     );
 }

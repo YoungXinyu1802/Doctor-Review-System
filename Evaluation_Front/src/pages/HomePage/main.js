@@ -177,7 +177,7 @@ class HomePage extends Component {
                                     <ArrowLeftOutlined
                                         onClick={() => window.location.replace('http://124.220.171.17:3000/') }
                                         style={ArrowStyle}/>
-                                    <Title level={4} style={titleStyle}>浙大七院医生评价系统</Title>
+                                    <Title level={4} style={titleStyle}>医生评价系统</Title>
                                     <Row gutter={16}>
                                     </Row>
                                 </Breadcrumb>
